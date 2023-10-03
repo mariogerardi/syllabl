@@ -20,6 +20,18 @@ const puzzles =
     "syllablesRequired": [1, 2, 2, 3, 4, 2, 3, 4],
     "goldenWords": ["bleak", "blender", "amble", "syllable", "impeccable", "fabled", "unblemished", "problematic"]
     },
+    {
+    "puzzleLetters": "cor",
+    "inputsEnabled": [2, 2, 1, 2, 3, 3, 3, 3],
+    "syllablesRequired": [1, 2, 2, 3, 1, 2, 3, 4],
+    "goldenWords": ["cork", "corgi", "rancor", "corridor", "score", "acorn", "incorrect", "accordion"]
+    },
+    {
+    "puzzleLetters": "hat",
+    "inputsEnabled": [2, 1, 2, 1, 2, 3, 3, 3],
+    "syllablesRequired": [1, 1, 2, 2, 3, 2, 3, 4],
+    "goldenWords": ["hatch", "chat", "hatchet", "chitchat", "hatchery", "shatter", "emphatic", "whatsoever"]
+    },
 ];
 
 // submit() takes the three inputs and gets the word info from the formed word
@@ -47,7 +59,7 @@ function submit() {
     fetch(`https://wordsapiv1.p.rapidapi.com/words/${first+second+third}`, {
       "method": "GET",
       "headers": {
-        "x-rapidapi-key": API_KEY,
+        "x-rapidapi-key": "2abe5831c9msh56936816ad908fcp1f6f3ajsn8d5162bb" + 1597,
         "x-rapidapi-host": "wordsapiv1.p.rapidapi.com"
       }
     })
@@ -57,6 +69,9 @@ function submit() {
                 alert("Please enter a valid word.")
             } else if (syllablesNeeded !== data.syllables.count) {
                 alert("The entered word does not meet the syllables requirement.")
+            } else if (data.word != first+second+third) {
+                console.log(data.word + " AND " + first + second + third)
+                alert("The word may not be plural.")
             } else {
                 score++;
                 fetchedWord = data;
