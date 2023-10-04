@@ -32,6 +32,18 @@ const puzzles =
     "syllablesRequired": [1, 1, 2, 2, 3, 2, 3, 4],
     "goldenWords": ["hatch", "chat", "hatchet", "chitchat", "hatchery", "shatter", "emphatic", "whatsoever"]
     },
+    {
+    "puzzleLetters": "art",
+    "inputsEnabled": [1, 1, 1, 2, 2, 3, 3, 3],
+    "syllablesRequired": [1, 2, 3, 2, 3, 1, 2, 3],
+    "goldenWords": ["thwart", "outsmart", "worrywart", "artist", "artisan", "earth", "martyr", "cathartic"]
+    },
+    {
+    "puzzleLetters": "int",
+    "inputsEnabled": [2, 2, 2, 2, 1, 1, 1, 3],
+    "syllablesRequired": [2, 3, 4, 5, 1, 2, 3, 1],
+    "goldenWords": ["intrigue", "intricate", "intuition", "interpolation", "squint", "complaint", "fingerprint", "ninth"]
+    },
 ];
 
 // submit() takes the three inputs and gets the word info from the formed word
@@ -74,8 +86,26 @@ function submit() {
                 alert("The word may not be plural.")
             } else {
                 score++;
+                externalScore += 1;
                 fetchedWord = data;
-                start();
+                document.getElementById("message").innerHTML = "+1 point!";
+                if (data.frequency <= 3) {
+                    document.getElementById("title").style.color = "rebeccapurple";
+                    document.getElementById("message").innerHTML = "+3 points!";
+                    document.getElementById("message").style.color = "rebeccapurple";
+                    externalScore += 3;
+                }
+                if (data.word === puzzles[puzzleID].goldenWords[score - 1]) {
+                    document.getElementById("title").style.color = "gold"
+                    document.getElementById("message").innerHTML = "+5 points!";
+                    document.getElementById("message").style.color = "gold";
+                    externalScore += 5;
+                }
+                setTimeout(() => {
+                    document.getElementById("title").style.color = "white"
+                    document.getElementById("message").style.color = "white";
+                    start();
+                }, "600");
             }
     });
 }
@@ -95,6 +125,8 @@ function gameSet() {
         document.getElementById("golden"+i).hidden = true    
     }
     score = 0;
+    externalScore = 0
+    document.getElementById("message").innerHTML = "Score: 0";
     start();
 }
 
@@ -103,6 +135,7 @@ let fetchedWord = {};
 let structure = 0
 let syllablesNeeded = 0;
 let score = 0;
+let externalScore = 0;
 
 function inputDisabler() {
     structure = puzzles[puzzleID].inputsEnabled[score];
@@ -130,6 +163,7 @@ function inputDisabler() {
 }
 
 function start() {
+    document.getElementById("message").innerHTML = "Score: " + externalScore;
     document.getElementById('slotOne').value = "";
     document.getElementById('slotThree').value = "";
     inputDisabler();

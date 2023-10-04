@@ -8,14 +8,16 @@
     <title>syllabl</title>
 </head>
 <body>
-    <h1>syllabl</h1>
+    <h1 id="title">syllabl</h1>
+    <hr style="width: 350px;">
     <div class="game">
         <h4 id="syllables">Press Play to begin.</h4>
         <div>
-            <input type="text" id="slotOne" pattern="[a-z]">
-            <input type="text" id="slotTwo" readonly value="">
-            <input type="text" id="slotThree" pattern="[a-z]">
+            <input style="border-style: none;" type="text" id="slotOne" pattern="[a-z]">
+            <input style="border-style: none;" type="text" id="slotTwo" readonly value="">
+            <input style="border-style: none;" type="text" id="slotThree" pattern="[a-z]">
         </div>
+        <h4 id="message">Score: 0</h4>
         <br>
         <div class="buttonbox">
             <button id="play" onclick="gameSet()">Play</button>
@@ -88,5 +90,53 @@
         <h3 class="definition" id="definition8"></h3>
     </div>
     <hr style="width: 350px;">
+    <div class="rules">
+        <h2>How to play:</h2>
+        <p>
+            Each game contains a three-letter string
+            that you must construct words with. The game consists of eight stages,
+            where you must adhere to the syllable count provided. Some stages allow
+            you to add letters to the front of the string, and others to the end.
+            Some allow both.
+        </p>
+        <h4 id="syllable-htp">syllables required: 3</h4>
+        <div id="htp">
+            <input  style="border: none;" class="inputs-htp" id="htp1" type="text" readonly value="cal">
+            <input  style="border: none;" class="inputs-htp2" type="text" readonly value="end">
+            <input  style="border: none;" class="inputs-htp3" id="htp2" type="text" readonly value="ar">
+        </div>
+        <p>
+            Most stages will have multiple possible answers, so don't be afraid
+            to guess! Each stage completed is worth ONE point.
+        </p>
+        <p>    
+            You'll receive additional points for each <span style="color: rebeccapurple;">OBSCURE</span> word you find. 
+            Obscurity is defined as having a Zipf value of 3 or less - which
+            corresponds to words with frequencies of one per million words.
+            As such, you will receive THREE additional points for each 
+            obscure word.
+        </p>
+        <h4 id="syllable-htp">syllables required: 3</h4>
+        <div id="htp">
+            <input style="background-color: rebeccapurple; color: white; border: none;" class="inputs-htp" id="htp1" type="text" readonly value="p">
+            <input style="background-color: rebeccapurple; color: white; border: none;" class="inputs-htp2" type="text" readonly value="end">
+            <input style="background-color: rebeccapurple; color: white; border: none;" class="inputs-htp3" id="htp2" type="text" readonly value="ulum">
+        </div>
+        <h6 class="obscure" style="background-color: rebeccapurple;" id="htp">Obscure word!</h6>
+        <p>
+            Finally, there are <span style="color: gold;">GOLDEN</span> words - ONE per stage. These
+            are specifically selected by the game's creator, and award FIVE additional points.
+        </p>
+        <h4 id="syllable-htp">syllables required: 3</h4>
+        <div id="htp">
+            <input style="background-color: gold; color: black; border: none;" class="inputs-htp" id="htp1" type="text" readonly value="r">
+            <input style="background-color: gold; color: black; border: none;" class="inputs-htp2" type="text" readonly value="end">
+            <input style="background-color: gold; color: black; border: none;" class="inputs-htp3" id="htp2" type="text" readonly value="ezvous">
+        </div>
+        <h6 class="golden" style="background-color: gold;" id="htp">Golden word!</h6>
+        <p>
+        Try to complete all eight stages and score as high as possible!
+        </p>
+    </div>
 </body>
 </html>
