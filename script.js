@@ -12,19 +12,19 @@ const puzzles =
     "puzzleLetters": "car",
     "inputsEnabled": [2, 2, 2, 1, 1, 3, 3, 3],
     "syllablesRequired": [1, 2, 3, 1, 2, 2, 3, 4],
-    "goldenWords": ["carve", "careful", "caramel", "scar", "boxcar", "discard", "scarcity", "vicarious"]
+    "goldenWords": ["carve", "careful", "caramel", "scar", "boxcar", "scarlet", "scarcity", "vicarious"]
     },
     {
     "puzzleLetters": "ble",
     "inputsEnabled": [2, 2, 1, 1, 1, 3, 3, 3],
     "syllablesRequired": [1, 2, 2, 3, 4, 2, 3, 4],
-    "goldenWords": ["bleak", "blender", "amble", "syllable", "impeccable", "fabled", "unblemished", "problematic"]
+    "goldenWords": ["bleak", "blender", "amble", "syllable", "impeccable", "sublet", "bumblebee", "problematic"]
     },
     {
     "puzzleLetters": "cor",
     "inputsEnabled": [2, 2, 1, 2, 3, 3, 3, 3],
     "syllablesRequired": [1, 2, 2, 3, 1, 2, 3, 4],
-    "goldenWords": ["cork", "corgi", "rancor", "corridor", "score", "acorn", "incorrect", "accordion"]
+    "goldenWords": ["cork", "corgi", "rancor", "corridor", "score", "hardcore", "incorrect", "accordion"]
     },
     {
     "puzzleLetters": "hat",
@@ -81,8 +81,19 @@ function submit() {
 }
 
 function gameSet() {
+    document.getElementById('play').innerHTML = "Reset";
     puzzleID = Math.floor(Math.random() * puzzles.length)
+    document.getElementById('slotOne').value = "";
     document.getElementById("slotTwo").value = puzzles[puzzleID].puzzleLetters
+    document.getElementById('slotThree').value = "";
+    for (let i = 1; i <= 8; i++) {
+        document.getElementById("word"+i).innerHTML = "";
+        document.getElementById("word"+i).style.color = "white"
+        document.getElementById("definition"+i).innerHTML = "";
+        document.getElementById("definition"+i).style.color = "white"  
+        document.getElementById("obscure"+i).hidden = true           
+        document.getElementById("golden"+i).hidden = true    
+    }
     score = 0;
     start();
 }
@@ -96,7 +107,7 @@ let score = 0;
 function inputDisabler() {
     structure = puzzles[puzzleID].inputsEnabled[score];
     syllablesNeeded = puzzles[puzzleID].syllablesRequired[score];
-    document.getElementById('syllables').innerHTML = "Syllables required: " + syllablesNeeded
+    document.getElementById('syllables').innerHTML = "syllables required: " + syllablesNeeded
     if (structure === 1) {
         document.getElementById('slotOne').readOnly = false;
         document.getElementById('slotOne').style.backgroundColor = "white";
@@ -124,8 +135,19 @@ function start() {
     inputDisabler();
     if (score >= 1 && score <= 8) {
         document.getElementById("word"+score).innerHTML = fetchedWord.word;
-        document.getElementById("speech"+score).innerHTML = fetchedWord.results[0].partOfSpeech;
-        document.getElementById("definition"+score).innerHTML = fetchedWord.results[0].definition;
+        document.getElementById("definition"+score).innerHTML = fetchedWord.results[0].partOfSpeech + ". " + fetchedWord.results[0].definition;
+        if (fetchedWord.word === puzzles[puzzleID].goldenWords[score - 1]) {
+            document.getElementById("word"+score).style.color = "gold"
+            document.getElementById("definition"+score).style.color = "gold"  
+            document.getElementById("golden"+score).style.backgroundColor = "gold"              
+            document.getElementById("golden"+score).innerHTML = "Golden word!"              
+            document.getElementById("golden"+score).hidden = false           
+        }
+        if (fetchedWord.frequency <= 3) {
+            document.getElementById("obscure"+score).style.backgroundColor = "rebeccapurple"              
+            document.getElementById("obscure"+score).innerHTML = "Obscure word!"   
+            document.getElementById("obscure"+score).hidden = false  
+        }
     }
     if (score === 8) {
         document.getElementById('syllables').innerHTML = "Congratulations!"
