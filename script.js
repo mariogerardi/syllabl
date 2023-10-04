@@ -44,6 +44,126 @@ const puzzles =
     "syllablesRequired": [2, 3, 4, 5, 1, 2, 3, 1],
     "goldenWords": ["intrigue", "intricate", "intuition", "interpolation", "squint", "complaint", "fingerprint", "ninth"]
     },
+    {
+    "puzzleLetters": "wel",
+    "inputsEnabled": [2, 2, 2, 1, 1, 3, 3, 3],
+    "syllablesRequired": [1, 2, 3, 2, 3, 3, 2, 1],
+    "goldenWords": ["weld", "welfare", "wellbeing", "towel", "bejewel", "unwelcome", "farewell", "twelfth"]
+    },
+    {
+    "puzzleLetters": "ack",
+    "inputsEnabled": [1, 1, 1, 1, 3, 3, 2, 2],
+    "syllablesRequired": [1, 2, 3, 4, 2, 3, 3, 4],
+    "goldenWords": ["thwack", "flapjack", "piggyback", "counterattack", "jackpot", "blackberry", "acknowledge", "acknowledgment"]
+    },
+    {
+    "puzzleLetters": "end",
+    "inputsEnabled": [1, 1, 1, 2, 2, 3, 3, 3],
+    "syllablesRequired": [1, 2, 3, 2, 3, 2, 3, 4],
+    "goldenWords": ["fiend", "weekend", "apprehend", "endow", "endeavor", "friendship", "rendezvous", "hacienda"]
+    },
+    {
+    "puzzleLetters": "ave",
+    "inputsEnabled": [1, 1, 1, 3, 3, 3, 2, 2],
+    "syllablesRequired": [1, 2, 3, 2, 3, 4, 2, 3],
+    "goldenWords": ["weave", "concave", "agave", "eavesdrop", "bravery", "unwavering", "avenge", "average"]
+    },
+    {
+    "puzzleLetters": "eal",
+    "inputsEnabled": [1, 3, 3, 3, 1, 1, 1, 3],
+    "syllablesRequired": [1, 2, 3, 4, 4, 3, 2, 1],
+    "goldenWords": ["squeal", "zealous", "commonwealth", "surrealism", "ethereal", "ideal", "congeal", "realm"]
+    },
+    {
+    "puzzleLetters": "lla",
+    "inputsEnabled": [3, 3, 3, 3, 1, 1, 1, 2],
+    "syllablesRequired": [2, 3, 4, 5, 4, 3, 2, 2],
+    "goldenWords": ["village", "syllable", "collateral", "miscellaneous", "mozzarella", "umbrella", "villa", "llama"]
+    },
+    {
+    "puzzleLetters": "qua",
+    "inputsEnabled": [3, 3, 3, 3, 2, 2, 2, 1],
+    "syllablesRequired": [1, 2, 3, 4, 3, 2, 1, 2],
+    "goldenWords": ["square", "earthquake", "loquacious", "inadequate", "quadruple", "quagmire", "quartz", "aqua"]
+    },
+    {
+    "puzzleLetters": "ost",
+    "inputsEnabled": [1, 1, 1, 3, 3, 3, 2, 2],
+    "syllablesRequired": [1, 2, 3, 2, 3, 4, 2, 3],
+    "goldenWords": ["boost", "utmost", "permafrost", "jostle", "thermostat", "apostrophe", "ostrich", "ostracize"]
+    },
+    {
+    "puzzleLetters": "tar",
+    "inputsEnabled": [1, 1, 2, 2, 2, 2, 3, 3],
+    "syllablesRequired": [1, 2, 1, 2, 3, 4, 2, 1],
+    "goldenWords": ["star", "nectar", "tarp", "taro", "tarragon", "tarantula", "hectare", "starch"]
+    },
+    {
+    "puzzleLetters": "ast",
+    "inputsEnabled": [1, 1, 1, 3, 3, 3, 2, 2],
+    "syllablesRequired": [1, 2, 3, 1, 2, 3, 3, 4],
+    "goldenWords": ["coast", "steadfast", "flabbergast", "waste", "castle", "dynasty", "asteroid", "astrology"]
+    },
+    {
+    "puzzleLetters": "amb",
+    "inputsEnabled": [1, 2, 2, 2, 2, 3, 3, 3],
+    "syllablesRequired": [1, 2, 3, 4, 5, 2, 3, 4],
+    "goldenWords": ["jamb", "ambush", "ambient", "ambidextrous", "ambiguity", "chamber", "bamboozle", "jambalaya"]
+    },
+    {
+    "puzzleLetters": "amb",
+    "inputsEnabled": [1, 2, 2, 2, 2, 3, 3, 3],
+    "syllablesRequired": [1, 2, 3, 4, 5, 2, 3, 4],
+    "goldenWords": ["jamb", "ambush", "ambient", "ambidextrous", "ambiguity", "chamber", "bamboozle", "jambalaya"]
+    },
+    {
+    "puzzleLetters": "ual",
+    "inputsEnabled": [3, 3, 3, 3, 1, 1, 1, 1],
+    "syllablesRequired": [4, 5, 2, 1, 2, 3, 4, 5],
+    "goldenWords": ["casualty", "qualification", "squalor", "qualm", "equal", "mutual", "unusual", "individual"]
+    },
+    {
+    "puzzleLetters": "dec",
+    "inputsEnabled": [2, 2, 2, 2, 3, 3, 3, 3],
+    "syllablesRequired": [1, 2, 3, 4, 2, 3, 4, 5],
+    "goldenWords": ["deck", "decoy", "decathlon", "declassify", "sidecar", "indecent", "dodecagon", "appendectomy"]
+    },
+    {
+    "puzzleLetters": "ali",
+    "inputsEnabled": [2, 2, 2, 3, 3, 3, 3, 1],
+    "syllablesRequired": [2, 3, 4, 2, 3, 4, 5, 3],
+    "goldenWords": ["align", "alias", "alimony", "malice", "malignant", "italicize", "qualification", "alkali"]
+    },
+    {
+    "puzzleLetters": "por",
+    "inputsEnabled": [3, 3, 3, 3, 2, 2, 2, 1],
+    "syllablesRequired": [4, 3, 2, 1, 3, 2, 1, 2],
+    "goldenWords": ["evaporate", "opportune", "rapport", "sport", "porcupine", "porpoise", "porch", "vapor"]
+    },
+    {
+    "puzzleLetters": "mit",
+    "inputsEnabled": [1, 2, 2, 2, 3, 3, 3, 3],
+    "syllablesRequired": [2, 1, 2, 3, 4, 3, 2, 1],
+    "goldenWords": ["summit", "mite", "mitten", "mitosis", "imitation", "dynamite", "wordsmith", "smite"]
+    },
+    {
+    "puzzleLetters": "ala",
+    "inputsEnabled": [2, 2, 3, 3, 3, 1, 1, 1],
+    "syllablesRequired": [2, 4, 2, 3, 4, 2, 3, 4],
+    "goldenWords": ["alarm", "alabaster", "salad", "galaxy", "balaclava", "gala", "koala", "amygdala"]
+    },
+    {
+    "puzzleLetters": "ion",
+    "inputsEnabled": [1, 1, 1, 1, 2, 3, 3, 3],
+    "syllablesRequired": [2, 3, 4, 5, 3, 3, 4, 5],
+    "goldenWords": ["cushion", "conjunction", "expiration", "civilization", "ionic", "pioneer", "emotional", "exceptionally"]
+    },
+    {
+    "puzzleLetters": "ful",
+    "inputsEnabled": [1, 1, 1, 2, 2, 2, 2, 3],
+    "syllablesRequired": [2, 3, 4, 1, 2, 3, 4, 3],
+    "goldenWords": ["awful", "delightful", "uneventful", "full", "fulcrum", "fulfillment", "fulmination", "effulgent"]
+    },
 ];
 
 // submit() takes the three inputs and gets the word info from the formed word
@@ -174,12 +294,12 @@ function start() {
             document.getElementById("word"+score).style.color = "gold"
             document.getElementById("definition"+score).style.color = "gold"  
             document.getElementById("golden"+score).style.backgroundColor = "gold"              
-            document.getElementById("golden"+score).innerHTML = "Golden word!"              
+            document.getElementById("golden"+score).innerHTML = "Golden!"              
             document.getElementById("golden"+score).hidden = false           
         }
         if (fetchedWord.frequency <= 3) {
             document.getElementById("obscure"+score).style.backgroundColor = "rebeccapurple"              
-            document.getElementById("obscure"+score).innerHTML = "Obscure word!"   
+            document.getElementById("obscure"+score).innerHTML = "Obscure!"   
             document.getElementById("obscure"+score).hidden = false  
         }
     }
