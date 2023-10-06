@@ -1,16 +1,21 @@
 body {
     width: 100%;
-    color: white;
-    background-color: #121212;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #001900;
+    background-color: #50C878;
+    font-family: Arial, Helvetica, sans-serif;
     text-align: center;
     padding: 0;
     margin: 0;
 }
 
 h1 {
-    font-size: 72px;
-    margin-bottom: 5vh;
+    font-size: 64px;
+    margin-top: 5vh;
+    margin-bottom: 1vh;
+}
+
+hr {
+    border-color: #022419;
 }
 
 p {
@@ -20,28 +25,29 @@ p {
 input {
     padding: 0;
     margin: 0;
-    border-radius: 5px;
+    border-radius: 2px;
     text-align: center;
-    font-size: xx-large;
+    font-size: x-large;
     height: 6vh;
-    width: 8vh;
+    width: 6.5vh;
+    background-color: whitesmoke;
 }
 
 button {
-    color: white;
-    background-color: rebeccapurple;
+    color: whitesmoke;
+    background-color: #18673a;
     margin-bottom: 2vh;
-    border-radius: 10px;
-    border-style: double;
+    border-radius: 50px;
+    border-style: none;
     font-size: large;
     font-weight: 900;
     height: 5vh;
-    width: 20vh;
+    width: 125px;
 }
 
 button:active {
-    color: rebeccapurple;
-    background-color: white;
+    color: #2E8B57;
+    background-color: whitesmoke;
 }
 
 .game {
@@ -54,19 +60,23 @@ button:active {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 42vh;
+    width: 275px;
 }
 
 #slotOne {
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
     padding-right: 5px;
     text-align: right;
-    width: 15vh;
+    width: 16vh;
 }
 
 #slotThree {
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
     padding-left: 5px;
     text-align: left;
-    width: 15vh
+    width: 16vh
 }
 
 .answer {
@@ -114,7 +124,7 @@ button:active {
 }
 
 .golden {
-    color: black;
+    color: #423c6d;
 }
 
 #definition8 {
@@ -155,4 +165,25 @@ button:active {
 
 #syllable-htp {
     text-align: center;
+}
+
+#levels {
+    width: 350px;
+    margin: auto;
+    text-align: center;
+}
+
+.levelButton {
+    color: white;
+    margin: 5px;
+    background-color: #18673a;
+    border-radius: 50px;
+    width: 60px;
+    height: 40px;
+}
+
+.desc {
+    width: 250px;
+    margin: auto;
+    margin-bottom: 4vh;
 }

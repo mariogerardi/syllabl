@@ -9,160 +9,154 @@
 const puzzles = 
 [
     {
-    "puzzleLetters": "car",
-    "inputsEnabled": [2, 2, 2, 1, 1, 3, 3, 3],
-    "syllablesRequired": [1, 2, 3, 1, 2, 2, 3, 4],
-    "goldenWords": ["carve", "careful", "caramel", "scar", "boxcar", "scarlet", "scarcity", "vicarious"]
+        "puzzleLetters": "ack",
+        "inputsEnabled": [1, 1, 1, 1, 3, 3, 2, 2],
+        "syllablesRequired": [1, 2, 3, 4, 2, 3, 3, 4],
+        "goldenWords": ["thwack", "flapjack", "piggyback", "counterattack", "jackpot", "blackberry", "acknowledge", "acknowledgment"]
     },
     {
-    "puzzleLetters": "ble",
-    "inputsEnabled": [2, 2, 1, 1, 1, 3, 3, 3],
-    "syllablesRequired": [1, 2, 2, 3, 4, 2, 3, 4],
-    "goldenWords": ["bleak", "blender", "amble", "syllable", "impeccable", "sublet", "bumblebee", "problematic"]
+        "puzzleLetters": "ala",
+        "inputsEnabled": [2, 2, 3, 3, 3, 1, 1, 1],
+        "syllablesRequired": [2, 4, 2, 3, 4, 2, 3, 4],
+        "goldenWords": ["alarm", "alabaster", "salad", "galaxy", "balaclava", "gala", "koala", "amygdala"]
     },
     {
-    "puzzleLetters": "cor",
-    "inputsEnabled": [2, 2, 1, 2, 3, 3, 3, 3],
-    "syllablesRequired": [1, 2, 2, 3, 1, 2, 3, 4],
-    "goldenWords": ["cork", "corgi", "rancor", "corridor", "score", "hardcore", "incorrect", "accordion"]
+        "puzzleLetters": "ali",
+        "inputsEnabled": [2, 2, 2, 3, 3, 3, 3, 1],
+        "syllablesRequired": [2, 3, 4, 2, 3, 4, 5, 3],
+        "goldenWords": ["align", "alias", "alimony", "malice", "malignant", "italicize", "qualification", "alkali"]
     },
     {
-    "puzzleLetters": "hat",
-    "inputsEnabled": [2, 1, 2, 1, 2, 3, 3, 3],
-    "syllablesRequired": [1, 1, 2, 2, 3, 2, 3, 4],
-    "goldenWords": ["hatch", "chat", "hatchet", "chitchat", "hatchery", "shatter", "emphatic", "whatsoever"]
+        "puzzleLetters": "amb",
+        "inputsEnabled": [1, 2, 2, 2, 2, 3, 3, 3],
+        "syllablesRequired": [1, 2, 3, 4, 5, 2, 3, 4],
+        "goldenWords": ["jamb", "ambush", "ambient", "ambidextrous", "ambiguity", "chamber", "bamboozle", "jambalaya"]
     },
     {
-    "puzzleLetters": "art",
-    "inputsEnabled": [1, 1, 1, 2, 2, 3, 3, 3],
-    "syllablesRequired": [1, 2, 3, 2, 3, 1, 2, 3],
-    "goldenWords": ["thwart", "outsmart", "worrywart", "artist", "artisan", "earth", "martyr", "cathartic"]
+        "puzzleLetters": "art",
+        "inputsEnabled": [1, 1, 1, 2, 2, 3, 3, 3],
+        "syllablesRequired": [1, 2, 3, 2, 3, 1, 2, 3],
+        "goldenWords": ["thwart", "outsmart", "worrywart", "artist", "artisan", "earth", "martyr", "cathartic"]
     },
     {
-    "puzzleLetters": "int",
-    "inputsEnabled": [2, 2, 2, 2, 1, 1, 1, 3],
-    "syllablesRequired": [2, 3, 4, 5, 1, 2, 3, 1],
-    "goldenWords": ["intrigue", "intricate", "intuition", "interpolation", "squint", "complaint", "fingerprint", "ninth"]
+        "puzzleLetters": "ast",
+        "inputsEnabled": [1, 1, 1, 3, 3, 3, 2, 2],
+        "syllablesRequired": [1, 2, 3, 1, 2, 3, 3, 4],
+        "goldenWords": ["coast", "steadfast", "flabbergast", "waste", "castle", "dynasty", "asteroid", "astrology"]
     },
     {
-    "puzzleLetters": "wel",
-    "inputsEnabled": [2, 2, 2, 1, 1, 3, 3, 3],
-    "syllablesRequired": [1, 2, 3, 2, 3, 3, 2, 1],
-    "goldenWords": ["weld", "welfare", "wellbeing", "towel", "bejewel", "unwelcome", "farewell", "twelfth"]
+        "puzzleLetters": "ave",
+        "inputsEnabled": [1, 1, 1, 3, 3, 3, 2, 2],
+        "syllablesRequired": [1, 2, 3, 2, 3, 4, 2, 3],
+        "goldenWords": ["weave", "concave", "agave", "eavesdrop", "bravery", "unwavering", "avenge", "average"]
     },
     {
-    "puzzleLetters": "ack",
-    "inputsEnabled": [1, 1, 1, 1, 3, 3, 2, 2],
-    "syllablesRequired": [1, 2, 3, 4, 2, 3, 3, 4],
-    "goldenWords": ["thwack", "flapjack", "piggyback", "counterattack", "jackpot", "blackberry", "acknowledge", "acknowledgment"]
+        "puzzleLetters": "ble",
+        "inputsEnabled": [2, 2, 1, 1, 1, 3, 3, 3],
+        "syllablesRequired": [1, 2, 2, 3, 4, 2, 3, 4],
+        "goldenWords": ["bleak", "blender", "amble", "syllable", "impeccable", "sublet", "bumblebee", "problematic"]
     },
     {
-    "puzzleLetters": "end",
-    "inputsEnabled": [1, 1, 1, 2, 2, 3, 3, 3],
-    "syllablesRequired": [1, 2, 3, 2, 3, 2, 3, 4],
-    "goldenWords": ["fiend", "weekend", "apprehend", "endow", "endeavor", "friendship", "rendezvous", "hacienda"]
+        "puzzleLetters": "car",
+        "inputsEnabled": [2, 2, 2, 1, 1, 3, 3, 3],
+        "syllablesRequired": [1, 2, 3, 1, 2, 2, 3, 4],
+        "goldenWords": ["carve", "careful", "caramel", "scar", "boxcar", "scarlet", "scarcity", "vicarious"]
     },
     {
-    "puzzleLetters": "ave",
-    "inputsEnabled": [1, 1, 1, 3, 3, 3, 2, 2],
-    "syllablesRequired": [1, 2, 3, 2, 3, 4, 2, 3],
-    "goldenWords": ["weave", "concave", "agave", "eavesdrop", "bravery", "unwavering", "avenge", "average"]
+        "puzzleLetters": "cor",
+        "inputsEnabled": [2, 2, 1, 2, 3, 3, 3, 3],
+        "syllablesRequired": [1, 2, 2, 3, 1, 2, 3, 4],
+        "goldenWords": ["cork", "corgi", "rancor", "corridor", "score", "hardcore", "incorrect", "accordion"]
     },
     {
-    "puzzleLetters": "eal",
-    "inputsEnabled": [1, 3, 3, 3, 1, 1, 1, 3],
-    "syllablesRequired": [1, 2, 3, 4, 4, 3, 2, 1],
-    "goldenWords": ["squeal", "zealous", "commonwealth", "surrealism", "ethereal", "ideal", "congeal", "realm"]
+        "puzzleLetters": "dec",
+        "inputsEnabled": [2, 2, 2, 2, 3, 3, 3, 3],
+        "syllablesRequired": [1, 2, 3, 4, 2, 3, 4, 5],
+        "goldenWords": ["deck", "decoy", "decathlon", "declassify", "sidecar", "indecent", "dodecagon", "appendectomy"]
     },
     {
-    "puzzleLetters": "lla",
-    "inputsEnabled": [3, 3, 3, 3, 1, 1, 1, 2],
-    "syllablesRequired": [2, 3, 4, 5, 4, 3, 2, 2],
-    "goldenWords": ["village", "syllable", "collateral", "miscellaneous", "mozzarella", "umbrella", "villa", "llama"]
+        "puzzleLetters": "eal",
+        "inputsEnabled": [1, 3, 3, 3, 1, 1, 1, 3],
+        "syllablesRequired": [1, 2, 3, 4, 4, 3, 2, 1],
+        "goldenWords": ["squeal", "zealous", "commonwealth", "surrealism", "ethereal", "ideal", "congeal", "realm"]
     },
     {
-    "puzzleLetters": "qua",
-    "inputsEnabled": [3, 3, 3, 3, 2, 2, 2, 1],
-    "syllablesRequired": [1, 2, 3, 4, 3, 2, 1, 2],
-    "goldenWords": ["square", "earthquake", "loquacious", "inadequate", "quadruple", "quagmire", "quartz", "aqua"]
+        "puzzleLetters": "end",
+        "inputsEnabled": [1, 1, 1, 2, 2, 3, 3, 3],
+        "syllablesRequired": [1, 2, 3, 2, 3, 2, 3, 4],
+        "goldenWords": ["fiend", "weekend", "apprehend", "endow", "endeavor", "friendship", "rendezvous", "hacienda"]
     },
     {
-    "puzzleLetters": "ost",
-    "inputsEnabled": [1, 1, 1, 3, 3, 3, 2, 2],
-    "syllablesRequired": [1, 2, 3, 2, 3, 4, 2, 3],
-    "goldenWords": ["boost", "utmost", "permafrost", "jostle", "thermostat", "apostrophe", "ostrich", "ostracize"]
+        "puzzleLetters": "ful",
+        "inputsEnabled": [1, 1, 1, 2, 2, 2, 2, 3],
+        "syllablesRequired": [2, 3, 4, 1, 2, 3, 4, 3],
+        "goldenWords": ["awful", "delightful", "uneventful", "full", "fulcrum", "fulfillment", "fulmination", "effulgent"]
     },
     {
-    "puzzleLetters": "tar",
-    "inputsEnabled": [1, 1, 2, 2, 2, 2, 3, 3],
-    "syllablesRequired": [1, 2, 1, 2, 3, 4, 2, 1],
-    "goldenWords": ["star", "nectar", "tarp", "taro", "tarragon", "tarantula", "hectare", "starch"]
+        "puzzleLetters": "hat",
+        "inputsEnabled": [2, 1, 2, 1, 2, 3, 3, 3],
+        "syllablesRequired": [1, 1, 2, 2, 3, 2, 3, 4],
+        "goldenWords": ["hatch", "chat", "hatchet", "chitchat", "hatchery", "shatter", "emphatic", "whatsoever"]
     },
     {
-    "puzzleLetters": "ast",
-    "inputsEnabled": [1, 1, 1, 3, 3, 3, 2, 2],
-    "syllablesRequired": [1, 2, 3, 1, 2, 3, 3, 4],
-    "goldenWords": ["coast", "steadfast", "flabbergast", "waste", "castle", "dynasty", "asteroid", "astrology"]
+        "puzzleLetters": "int",
+        "inputsEnabled": [2, 2, 2, 2, 1, 1, 1, 3],
+        "syllablesRequired": [2, 3, 4, 5, 1, 2, 3, 1],
+        "goldenWords": ["intrigue", "intricate", "intuition", "interpolation", "squint", "complaint", "fingerprint", "ninth"]
     },
     {
-    "puzzleLetters": "amb",
-    "inputsEnabled": [1, 2, 2, 2, 2, 3, 3, 3],
-    "syllablesRequired": [1, 2, 3, 4, 5, 2, 3, 4],
-    "goldenWords": ["jamb", "ambush", "ambient", "ambidextrous", "ambiguity", "chamber", "bamboozle", "jambalaya"]
+        "puzzleLetters": "ion",
+        "inputsEnabled": [1, 1, 1, 1, 2, 3, 3, 3],
+        "syllablesRequired": [2, 3, 4, 5, 3, 3, 4, 5],
+        "goldenWords": ["cushion", "conjunction", "expiration", "civilization", "ionic", "pioneer", "emotional", "exceptionally"]
     },
     {
-    "puzzleLetters": "amb",
-    "inputsEnabled": [1, 2, 2, 2, 2, 3, 3, 3],
-    "syllablesRequired": [1, 2, 3, 4, 5, 2, 3, 4],
-    "goldenWords": ["jamb", "ambush", "ambient", "ambidextrous", "ambiguity", "chamber", "bamboozle", "jambalaya"]
+        "puzzleLetters": "lla",
+        "inputsEnabled": [3, 3, 3, 3, 1, 1, 1, 2],
+        "syllablesRequired": [2, 3, 4, 5, 4, 3, 2, 2],
+        "goldenWords": ["village", "syllable", "collateral", "miscellaneous", "mozzarella", "umbrella", "villa", "llama"]
     },
     {
-    "puzzleLetters": "ual",
-    "inputsEnabled": [3, 3, 3, 3, 1, 1, 1, 1],
-    "syllablesRequired": [4, 5, 2, 1, 2, 3, 4, 5],
-    "goldenWords": ["casualty", "qualification", "squalor", "qualm", "equal", "mutual", "unusual", "individual"]
+        "puzzleLetters": "mit",
+        "inputsEnabled": [1, 2, 2, 2, 3, 3, 3, 3],
+        "syllablesRequired": [2, 1, 2, 3, 4, 3, 2, 1],
+        "goldenWords": ["summit", "mite", "mitten", "mitosis", "imitation", "dynamite", "wordsmith", "smite"]
     },
     {
-    "puzzleLetters": "dec",
-    "inputsEnabled": [2, 2, 2, 2, 3, 3, 3, 3],
-    "syllablesRequired": [1, 2, 3, 4, 2, 3, 4, 5],
-    "goldenWords": ["deck", "decoy", "decathlon", "declassify", "sidecar", "indecent", "dodecagon", "appendectomy"]
+        "puzzleLetters": "ost",
+        "inputsEnabled": [1, 1, 1, 3, 3, 3, 2, 2],
+        "syllablesRequired": [1, 2, 3, 2, 3, 4, 2, 3],
+        "goldenWords": ["boost", "utmost", "permafrost", "jostle", "thermostat", "apostrophe", "ostrich", "ostracize"]
     },
     {
-    "puzzleLetters": "ali",
-    "inputsEnabled": [2, 2, 2, 3, 3, 3, 3, 1],
-    "syllablesRequired": [2, 3, 4, 2, 3, 4, 5, 3],
-    "goldenWords": ["align", "alias", "alimony", "malice", "malignant", "italicize", "qualification", "alkali"]
+        "puzzleLetters": "por",
+        "inputsEnabled": [3, 3, 3, 3, 2, 2, 2, 1],
+        "syllablesRequired": [4, 3, 2, 1, 3, 2, 1, 2],
+        "goldenWords": ["evaporate", "opportune", "rapport", "sport", "porcupine", "porpoise", "porch", "vapor"]
     },
     {
-    "puzzleLetters": "por",
-    "inputsEnabled": [3, 3, 3, 3, 2, 2, 2, 1],
-    "syllablesRequired": [4, 3, 2, 1, 3, 2, 1, 2],
-    "goldenWords": ["evaporate", "opportune", "rapport", "sport", "porcupine", "porpoise", "porch", "vapor"]
+        "puzzleLetters": "qua",
+        "inputsEnabled": [3, 3, 3, 3, 2, 2, 2, 1],
+        "syllablesRequired": [1, 2, 3, 4, 3, 2, 1, 2],
+        "goldenWords": ["square", "earthquake", "loquacious", "inadequate", "quadruple", "quagmire", "quartz", "aqua"]
     },
     {
-    "puzzleLetters": "mit",
-    "inputsEnabled": [1, 2, 2, 2, 3, 3, 3, 3],
-    "syllablesRequired": [2, 1, 2, 3, 4, 3, 2, 1],
-    "goldenWords": ["summit", "mite", "mitten", "mitosis", "imitation", "dynamite", "wordsmith", "smite"]
+        "puzzleLetters": "tar",
+        "inputsEnabled": [1, 1, 2, 2, 2, 2, 3, 3],
+        "syllablesRequired": [1, 2, 1, 2, 3, 4, 2, 1],
+        "goldenWords": ["star", "nectar", "tarp", "taro", "tarragon", "tarantula", "hectare", "starch"]
     },
     {
-    "puzzleLetters": "ala",
-    "inputsEnabled": [2, 2, 3, 3, 3, 1, 1, 1],
-    "syllablesRequired": [2, 4, 2, 3, 4, 2, 3, 4],
-    "goldenWords": ["alarm", "alabaster", "salad", "galaxy", "balaclava", "gala", "koala", "amygdala"]
+        "puzzleLetters": "ual",
+        "inputsEnabled": [3, 3, 3, 3, 1, 1, 1, 1],
+        "syllablesRequired": [4, 5, 2, 1, 2, 3, 4, 5],
+        "goldenWords": ["casualty", "qualification", "squalor", "qualm", "equal", "mutual", "unusual", "individual"]
     },
     {
-    "puzzleLetters": "ion",
-    "inputsEnabled": [1, 1, 1, 1, 2, 3, 3, 3],
-    "syllablesRequired": [2, 3, 4, 5, 3, 3, 4, 5],
-    "goldenWords": ["cushion", "conjunction", "expiration", "civilization", "ionic", "pioneer", "emotional", "exceptionally"]
-    },
-    {
-    "puzzleLetters": "ful",
-    "inputsEnabled": [1, 1, 1, 2, 2, 2, 2, 3],
-    "syllablesRequired": [2, 3, 4, 1, 2, 3, 4, 3],
-    "goldenWords": ["awful", "delightful", "uneventful", "full", "fulcrum", "fulfillment", "fulmination", "effulgent"]
+        "puzzleLetters": "wel",
+        "inputsEnabled": [2, 2, 2, 1, 1, 3, 3, 3],
+        "syllablesRequired": [1, 2, 3, 2, 3, 3, 2, 1],
+        "goldenWords": ["weld", "welfare", "wellbeing", "towel", "bejewel", "unwelcome", "farewell", "twelfth"]
     },
 ];
 
@@ -210,9 +204,9 @@ function submit() {
                 fetchedWord = data;
                 document.getElementById("message").innerHTML = "+1 point!";
                 if (data.frequency <= 3) {
-                    document.getElementById("title").style.color = "rebeccapurple";
+                    document.getElementById("title").style.color = "#7a839e";
                     document.getElementById("message").innerHTML = "+3 points!";
-                    document.getElementById("message").style.color = "rebeccapurple";
+                    document.getElementById("message").style.color = "#7a839e";
                     externalScore += 3;
                 }
                 if (data.word === puzzles[puzzleID].goldenWords[score - 1]) {
@@ -222,8 +216,8 @@ function submit() {
                     externalScore += 5;
                 }
                 setTimeout(() => {
-                    document.getElementById("title").style.color = "white"
-                    document.getElementById("message").style.color = "white";
+                    document.getElementById("title").style.color = "#001900"
+                    document.getElementById("message").style.color = "#001900";
                     start();
                 }, "600");
             }
@@ -231,16 +225,38 @@ function submit() {
 }
 
 function gameSet() {
-    document.getElementById('play').innerHTML = "Reset";
     puzzleID = Math.floor(Math.random() * puzzles.length)
     document.getElementById('slotOne').value = "";
     document.getElementById("slotTwo").value = puzzles[puzzleID].puzzleLetters
     document.getElementById('slotThree').value = "";
     for (let i = 1; i <= 8; i++) {
         document.getElementById("word"+i).innerHTML = "";
-        document.getElementById("word"+i).style.color = "white"
+        document.getElementById("word"+i).style.color = "#001900"
         document.getElementById("definition"+i).innerHTML = "";
-        document.getElementById("definition"+i).style.color = "white"  
+        document.getElementById("definition"+i).style.color = "#001900"  
+        document.getElementById("obscure"+i).hidden = true           
+        document.getElementById("golden"+i).hidden = true    
+    }
+    score = 0;
+    externalScore = 0
+    document.getElementById("message").innerHTML = "Score: 0";
+    start();
+}
+
+function gameSetChosen(chosenLevel) {
+    for (let i = 0; i < puzzles.length; i++) {
+        if (puzzles[i].puzzleLetters === chosenLevel) {
+            puzzleID = i;
+        }
+    }
+    document.getElementById('slotOne').value = "";
+    document.getElementById("slotTwo").value = puzzles[puzzleID].puzzleLetters
+    document.getElementById('slotThree').value = "";
+    for (let i = 1; i <= 8; i++) {
+        document.getElementById("word"+i).innerHTML = "";
+        document.getElementById("word"+i).style.color = "#001900"
+        document.getElementById("definition"+i).innerHTML = "";
+        document.getElementById("definition"+i).style.color = "#001900"  
         document.getElementById("obscure"+i).hidden = true           
         document.getElementById("golden"+i).hidden = true    
     }
@@ -263,22 +279,22 @@ function inputDisabler() {
     document.getElementById('syllables').innerHTML = "syllables required: " + syllablesNeeded
     if (structure === 1) {
         document.getElementById('slotOne').readOnly = false;
-        document.getElementById('slotOne').style.backgroundColor = "white";
+        document.getElementById('slotOne').style.backgroundColor = "whitesmoke";
         document.getElementById('slotThree').readOnly = true;
-        document.getElementById('slotThree').style.backgroundColor = "gray";
+        document.getElementById('slotThree').style.backgroundColor = "#0f532c";
 
     }
     if (structure === 2) {
         document.getElementById('slotOne').readOnly = true;
-        document.getElementById('slotOne').style.backgroundColor = "gray";
+        document.getElementById('slotOne').style.backgroundColor = "#0f532a";
         document.getElementById('slotThree').readOnly = false;
-        document.getElementById('slotThree').style.backgroundColor = "white";
+        document.getElementById('slotThree').style.backgroundColor = "whitesmoke";
     }
     if (structure === 3) {
         document.getElementById('slotOne').readOnly = false;
-        document.getElementById('slotOne').style.backgroundColor = "white";
+        document.getElementById('slotOne').style.backgroundColor = "whitesmoke";
         document.getElementById('slotThree').readOnly = false;
-        document.getElementById('slotThree').style.backgroundColor = "white";
+        document.getElementById('slotThree').style.backgroundColor = "whitesmoke";
     }
 }
 
@@ -289,17 +305,17 @@ function start() {
     inputDisabler();
     if (score >= 1 && score <= 8) {
         document.getElementById("word"+score).innerHTML = fetchedWord.word;
-        document.getElementById("definition"+score).innerHTML = fetchedWord.results[0].partOfSpeech + ". " + fetchedWord.results[0].definition;
+        // document.getElementById("definition"+score).innerHTML = fetchedWord.results[0].partOfSpeech + ". " + fetchedWord.results[0].definition;
         if (fetchedWord.word === puzzles[puzzleID].goldenWords[score - 1]) {
             document.getElementById("word"+score).style.color = "gold"
             document.getElementById("definition"+score).style.color = "gold"  
             document.getElementById("golden"+score).style.backgroundColor = "gold"              
-            document.getElementById("golden"+score).innerHTML = "Golden!"              
+            document.getElementById("golden"+score).innerHTML = "✪ Golden!"              
             document.getElementById("golden"+score).hidden = false           
         }
         if (fetchedWord.frequency <= 3) {
-            document.getElementById("obscure"+score).style.backgroundColor = "rebeccapurple"              
-            document.getElementById("obscure"+score).innerHTML = "Obscure!"   
+            document.getElementById("obscure"+score).style.backgroundColor = "#7a839e"              
+            document.getElementById("obscure"+score).innerHTML = "✪ Obscure!"   
             document.getElementById("obscure"+score).hidden = false  
         }
     }
@@ -308,3 +324,20 @@ function start() {
         alert("Congratulations! You've won!")
     }
 }
+
+for (let i = 0; i < puzzles.length; i++) {
+        const levelButton = document.createElement("button");
+        levelButton.onclick = assign;
+        levelButton.className = "levelButton"
+        const node = document.createTextNode(puzzles[i].puzzleLetters);
+        levelButton.appendChild(node);
+        const element = document.getElementById("levels");
+        element.appendChild(levelButton);
+}
+
+function assign() {
+    document.getElementById("message").innerHTML = "Create a word, and press Submit."
+    document.getElementById("slotTwo").value = event.target.innerHTML;
+    gameSetChosen(event.target.innerHTML);
+}
+

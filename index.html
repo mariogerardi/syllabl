@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
     <title>syllabl</title>
 </head>
 <body>
-    <h1 id="title">syllabl</h1>
-    <hr style="width: 350px;">
+    <h1 id="title">σ<br>syllabl</h1>
+    <h4 class="desc">Create words with a shared string of letters.</h4>
     <div class="game">
-        <h4 id="syllables">Press Play to begin.</h4>
+        <h4 id="syllables">Press Random, or select a level below.</h4>
         <div>
             <input style="border-style: none;" type="text" id="slotOne" pattern="[a-z]">
             <input style="border-style: none;" type="text" id="slotTwo" readonly value="">
@@ -20,10 +20,12 @@
         <h4 id="message">Score: 0</h4>
         <br>
         <div class="buttonbox">
-            <button id="play" onclick="gameSet()">Play</button>
+            <button id="play" onclick="gameSet()">Random</button>
             <button onclick="submit()">Submit</button>
         </div>
     </div>
+    <hr style="width: 350px;">
+    <h2>Words:</h2>
     <div class="results"></div>
     <div class="answer answer1">
         <h2 class="word" id="word1"></h2>
@@ -89,6 +91,11 @@
     <div>
         <h3 class="definition" id="definition8"></h3>
     </div>
+    <hr style="width: 350px;">
+    <h2>Levels:</h2>
+    <div id="levels">
+    </div>
+    <br>
     <hr style="width: 350px;">
     <div class="rules">
         <h2>How to play:</h2>
