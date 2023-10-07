@@ -182,7 +182,7 @@ function submit() {
         alert("You must fill in both fields.")
         return;
     }
-    fetch(`https://wordsapiv1.p.rapidapi.com/words/${first+second+third}`, {
+    fetch(`https://wordsapiv1.p.rapidapi.com/words/${first.toLowerCase()+second.toLowerCase()+third.toLowerCase()}`, {
       "method": "GET",
       "headers": {
         "x-rapidapi-key": "2abe5831c9msh56936816ad908fcp1f6f3ajsn8d5162bb" + 1597,
@@ -195,9 +195,9 @@ function submit() {
                 alert("Please enter a valid word.")
             } else if (syllablesNeeded !== data.syllables.count) {
                 alert("The entered word does not meet the syllables requirement.")
-            } else if (data.word != first+second+third) {
-                console.log(data.word + " AND " + first + second + third)
-                alert("The word may not be plural.")
+            } else if (data.word != first.toLowerCase()+second.toLowerCase()+third.toLowerCase()) {
+                console.log(data.word + " AND " + first.toLowerCase() + second.toLowerCase() + third.toLowerCase())
+                alert("Please enter a valid word5.")
             } else {
                 score++;
                 externalScore += 1;
@@ -282,7 +282,6 @@ function inputDisabler() {
         document.getElementById('slotOne').style.backgroundColor = "whitesmoke";
         document.getElementById('slotThree').readOnly = true;
         document.getElementById('slotThree').style.backgroundColor = "#0f532c";
-
     }
     if (structure === 2) {
         document.getElementById('slotOne').readOnly = true;
@@ -341,3 +340,63 @@ function assign() {
     gameSetChosen(event.target.innerHTML);
 }
 
+document.addEventListener("keyup", (e) => {
+    let pressedKey = String(e.key)
+    if (pressedKey === "Backspace") {
+        deleteLetter();
+    }
+    if (pressedKey === "Enter") {
+        submit();
+        return;
+    }
+    let found = pressedKey.match(/[a-z]/gi)
+    if (!found || found.length > 1) {
+        return;
+    } else {
+        insertLetter(pressedKey)
+    }
+})
+
+document.getElementById("keyboard-cont").addEventListener("click", (e) => {
+    const target = e.target
+    if (!target.classList.contains("keyboard-button")) {
+        return;
+    }
+    let key = target.textContent
+    document.dispatchEvent(new KeyboardEvent("keyup", {'key': key}))
+})
+
+let input = 0;
+
+function setInput() {
+    if (input = document.activeElement.id) {
+        return;
+    } else {
+        input = document.activeElement.id
+    }
+}
+
+function insertLetter(pressedKey) {
+    console.log(document.getElementById(input).readOnly)
+    if (document.getElementById(input).readOnly = false) {
+        return;
+    } else {
+        document.getElementById(input).value += pressedKey
+    }
+}
+
+function deleteLetter() {
+    let oldValue = document.getElementById(input).value
+    let newValue = oldValue.slice(0, -1);
+    document.getElementById(input).value = newValue
+}
+
+document.addEventListener("keypress", function(event) {
+    var key = event.keyCode;
+    if (key < 48 || key > 57) {
+        event.preventDefault();
+    }
+    if (key === 8) {
+        console.log("water")
+    }
+});
