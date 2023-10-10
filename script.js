@@ -27,6 +27,12 @@ const puzzles =
         "goldenWords": ["align", "alias", "alimony", "malice", "malignant", "italicize", "qualification", "alkali"]
     },
     {
+        "puzzleLetters": "alt",
+        "inputsEnabled": [2, 2, 2, 1, 3, 3, 3, 3],
+        "syllablesRequired": [2, 3, 4, 2, 4, 3, 2, 1],
+        "goldenWords": ["alto", "alternate", "altruistic", "exalt", "casualty", "specialty", "healthy", "waltz"]
+    },
+    {
         "puzzleLetters": "amb",
         "inputsEnabled": [1, 2, 2, 2, 2, 3, 3, 3],
         "syllablesRequired": [1, 2, 3, 4, 5, 2, 3, 4],
@@ -120,7 +126,13 @@ const puzzles =
         "puzzleLetters": "mit",
         "inputsEnabled": [1, 2, 2, 2, 3, 3, 3, 3],
         "syllablesRequired": [2, 1, 2, 3, 4, 3, 2, 1],
-        "goldenWords": ["summit", "mite", "mitten", "mitosis", "imitation", "dynamite", "wordsmith", "smite"]
+        "goldenWords": ["submit", "mite", "mitten", "mitosis", "imitation", "dynamite", "wordsmith", "smite"]
+    },
+    {
+        "puzzleLetters": "oli",
+        "inputsEnabled": [1, 1, 2, 2, 3, 3, 3, 3],
+        "syllablesRequired": [3, 4, 2, 3, 2, 3, 4, 5],
+        "goldenWords": ["broccoli", "ravioli", "olive", "oligarch", "polite", "holiday", "frivolity", "diabolical"]
     },
     {
         "puzzleLetters": "ost",
@@ -163,22 +175,22 @@ const puzzles =
 // submit() takes the three inputs and gets the word info from the formed word
 
 function submit() {
-    let first = document.getElementById('slotOne').value;
-    let second = document.getElementById('slotTwo').value;
-    let third = document.getElementById('slotThree').value;
-    if (structure === 1 && !document.getElementById('slotOne').value.trim()) {
+    let first = document.getElementById('slotOne').innerHTML;
+    let second = document.getElementById('slotTwo').innerHTML;
+    let third = document.getElementById('slotThree').innerHTML;
+    if (structure === 1 && !document.getElementById('slotOne').innerHTML.trim()) {
     alert("You must fill in the first field.");
         return;
     } 
-    if (structure === 2 && !document.getElementById('slotThree').value.trim()) {
+    if (structure === 2 && !document.getElementById('slotThree').innerHTML.trim()) {
         alert("You must fill in the last field.")
         return;
     } 
-    if (structure === 3 && !document.getElementById('slotOne').value.trim()) {
+    if (structure === 3 && !document.getElementById('slotOne').innerHTML.trim()) {
         alert("You must fill in both fields.")
         return;
     }
-    if (structure === 3 && !document.getElementById('slotThree').value.trim()) {
+    if (structure === 3 && !document.getElementById('slotThree').innerHTML.trim()) {
         alert("You must fill in both fields.")
         return;
     }
@@ -197,7 +209,7 @@ function submit() {
                 alert("The entered word does not meet the syllables requirement.")
             } else if (data.word != first.toLowerCase()+second.toLowerCase()+third.toLowerCase()) {
                 console.log(data.word + " AND " + first.toLowerCase() + second.toLowerCase() + third.toLowerCase())
-                alert("Please enter a valid word5.")
+                alert("Please enter a valid word.")
             } else {
                 score++;
                 externalScore += 1;
@@ -226,9 +238,9 @@ function submit() {
 
 function gameSet() {
     puzzleID = Math.floor(Math.random() * puzzles.length)
-    document.getElementById('slotOne').value = "";
-    document.getElementById("slotTwo").value = puzzles[puzzleID].puzzleLetters
-    document.getElementById('slotThree').value = "";
+    document.getElementById('slotOne').innerHTML = "";
+    document.getElementById("slotTwo").innerHTML = puzzles[puzzleID].puzzleLetters
+    document.getElementById('slotThree').innerHTML = "";
     for (let i = 1; i <= 8; i++) {
         document.getElementById("word"+i).innerHTML = "";
         document.getElementById("word"+i).style.color = "#001900"
@@ -249,9 +261,9 @@ function gameSetChosen(chosenLevel) {
             puzzleID = i;
         }
     }
-    document.getElementById('slotOne').value = "";
-    document.getElementById("slotTwo").value = puzzles[puzzleID].puzzleLetters
-    document.getElementById('slotThree').value = "";
+    document.getElementById('slotOne').innerHTML = "";
+    document.getElementById("slotTwo").innerHTML = puzzles[puzzleID].puzzleLetters
+    document.getElementById('slotThree').innerHTML = "";
     for (let i = 1; i <= 8; i++) {
         document.getElementById("word"+i).innerHTML = "";
         document.getElementById("word"+i).style.color = "#001900"
@@ -278,37 +290,56 @@ function inputDisabler() {
     syllablesNeeded = puzzles[puzzleID].syllablesRequired[score];
     document.getElementById('syllables').innerHTML = "syllables required: " + syllablesNeeded
     if (structure === 1) {
-        document.getElementById('slotOne').readOnly = false;
         document.getElementById('slotOne').style.backgroundColor = "whitesmoke";
-        document.getElementById('slotThree').readOnly = true;
-        document.getElementById('slotThree').style.backgroundColor = "#0f532c";
+        document.getElementById('slotThree').style.backgroundColor = "black";
+        document.getElementById('slotThree').style.width = "0px";
+        document.getElementById('slotOne').style.width = "175px";
+        document.getElementById('slotTwo').style.paddingLeft = "0px";
+        document.getElementById('slotTwo').style.paddingRight = "5px";
+        document.getElementById("front").style.borderWidth = "2px";
+        document.getElementById("front").style.borderColor = "white";
+        document.getElementById("front").style.borderStyle = "solid";
+        input = "slotOne"
+        document.getElementById("end").style.borderColor = "black";
     }
     if (structure === 2) {
-        document.getElementById('slotOne').readOnly = true;
-        document.getElementById('slotOne').style.backgroundColor = "#0f532a";
-        document.getElementById('slotThree').readOnly = false;
+        document.getElementById('slotOne').style.backgroundColor = "black";
+        document.getElementById('slotOne').style.width = "0px";
+        document.getElementById('slotThree').style.width = "175px";
         document.getElementById('slotThree').style.backgroundColor = "whitesmoke";
+        document.getElementById('slotTwo').style.paddingRight = "0px";
+        document.getElementById('slotTwo').style.paddingLeft = "5px";
+        document.getElementById("end").style.borderWidth = "2px";
+        document.getElementById("end").style.borderColor = "white";
+        document.getElementById("end").style.borderStyle = "solid";
+        input = "slotThree"
+        document.getElementById("front").style.borderColor = "black";
     }
     if (structure === 3) {
-        document.getElementById('slotOne').readOnly = false;
         document.getElementById('slotOne').style.backgroundColor = "whitesmoke";
-        document.getElementById('slotThree').readOnly = false;
+        document.getElementById('slotOne').style.width = "90px";
         document.getElementById('slotThree').style.backgroundColor = "whitesmoke";
+        document.getElementById('slotThree').style.width = "90px";
+        document.getElementById('slotTwo').style.paddingLeft = "0px";
+        document.getElementById('slotTwo').style.paddingRight = "0px";
+        document.getElementById("front").style.borderWidth = "2px";
+        document.getElementById("front").style.borderColor = "white";
+        document.getElementById("front").style.borderStyle = "solid";
+        input = "slotOne"
+        document.getElementById("end").style.borderColor = "black";
     }
 }
 
 function start() {
     document.getElementById("message").innerHTML = "Score: " + externalScore;
-    document.getElementById('slotOne').value = "";
-    document.getElementById('slotThree').value = "";
+    document.getElementById('slotOne').innerHTML = "";
+    document.getElementById('slotThree').innerHTML = "";
     inputDisabler();
     if (score >= 1 && score <= 8) {
         document.getElementById("word"+score).innerHTML = fetchedWord.word;
         // document.getElementById("definition"+score).innerHTML = fetchedWord.results[0].partOfSpeech + ". " + fetchedWord.results[0].definition;
         if (fetchedWord.word === puzzles[puzzleID].goldenWords[score - 1]) {
-            document.getElementById("word"+score).style.color = "gold"
-            document.getElementById("definition"+score).style.color = "gold"  
-            document.getElementById("golden"+score).style.backgroundColor = "gold"              
+            document.getElementById("golden"+score).style.background = "radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%), radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);}"              
             document.getElementById("golden"+score).innerHTML = "✪ Golden!"              
             document.getElementById("golden"+score).hidden = false           
         }
@@ -367,28 +398,22 @@ document.getElementById("keyboard-cont").addEventListener("click", (e) => {
 })
 
 let input = 0;
-
-function setInput() {
-    if (input = document.activeElement.id) {
-        return;
-    } else {
-        input = document.activeElement.id
-    }
-}
+let blockedInput = 0;
 
 function insertLetter(pressedKey) {
-    console.log(document.getElementById(input).readOnly)
-    if (document.getElementById(input).readOnly = false) {
+    if (input === "slotOne" && structure === 2) {
         return;
-    } else {
-        document.getElementById(input).value += pressedKey
     }
+    if (input === "slotThree" && structure === 1) {
+        return;
+    }
+    document.getElementById(input).innerHTML += pressedKey
 }
 
 function deleteLetter() {
-    let oldValue = document.getElementById(input).value
+    let oldValue = document.getElementById(input).innerHTML
     let newValue = oldValue.slice(0, -1);
-    document.getElementById(input).value = newValue
+    document.getElementById(input).innerHTML = newValue
 }
 
 document.addEventListener("keypress", function(event) {
@@ -400,3 +425,19 @@ document.addEventListener("keypress", function(event) {
         console.log("water")
     }
 });
+
+function selectlocation() {
+    if (document.activeElement.id === "front") {
+        document.getElementById("front").style.borderWidth = "2px";
+        document.getElementById("front").style.borderColor = "white";
+        document.getElementById("front").style.borderColor = "solid";
+        input = "slotOne"
+        document.getElementById("end").style.borderStyle = "black";
+    } else {
+        document.getElementById("end").style.borderWidth = "2px";
+        document.getElementById("end").style.borderColor = "white";
+        document.getElementById("end").style.borderStyle = "solid";
+        input = "slotThree"
+        document.getElementById("front").style.borderColor = "black";
+    }
+}

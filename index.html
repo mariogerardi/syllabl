@@ -13,80 +13,90 @@
         <h1 id="symbol">‿⊶‿⊶</h1>
         <div class="game">
             <h4 id="syllables">Press Play, or select a level below.</h4>
-            <div>
-                <input inputmode="" style="border-style: none;" type="text" onclick="setInput()" id="slotOne">
-                <input style="border-style: none;" type="text" id="slotTwo" readonly value="">
-                <input inputmode="" style="border-style: none;" type="text" onclick="setInput()" id="slotThree">
+            <div class="answerbox">
+                <div class="answerboxes" style="border-style: none;" id="slotOne"></div>
+                <div class="answerboxes" style="border-style: none; font-weight: 500;" id="slotTwo"></div>
+                <div class="answerboxes" style="border-style: none;" id="slotThree"></div>
             </div>
         </div>
+        <div class="buttonbox">
+            <button id="play" onclick="gameSet()">Play</button>
+            <button onclick="clear()">Clear</button>
+            <button onclick="submit()">Submit</button>
+        </div>
+        <hr style="width: 310px;">
         <div class="results">
             <div class="answer answer1">
                 <h2 class="word" id="word1"></h2>
-                <h6 hidden class="golden" id="golden1"></h6>
                 <h6 hidden class="obscure" id="obscure1"></h6>
+                <h6 hidden class="golden" id="golden1"></h6>
             </div>
             <div>
                 <h3 class="definition" id="definition1"></h3>
             </div>
             <div class="answer answer2">
                 <h2 class="word" id="word2"></h2>
-                <h6 hidden class="golden" id="golden2"></h6>
                 <h6 hidden class="obscure" id="obscure2"></h6>
+                <h6 hidden class="golden" id="golden2"></h6>
             </div>
             <div>
                 <h3 class="definition" id="definition2"></h3>
             </div>
             <div class="answer answer3">
                 <h2 class="word" id="word3"></h2>
-                <h6 hidden class="golden" id="golden3"></h6>
                 <h6 hidden class="obscure" id="obscure3"></h6>
+                <h6 hidden class="golden" id="golden3"></h6>
             </div>
             <div>
                 <h3 class="definition" id="definition3"></h3>
             </div>
             <div class="answer answer4">
                 <h2 class="word" id="word4"></h2>
-                <h6 hidden class="golden" id="golden4"></h6>
                 <h6 hidden class="obscure" id="obscure4"></h6>
+                <h6 hidden class="golden" id="golden4"></h6>
             </div>
             <div>
                 <h3 class="definition" id="definition4"></h3>
             </div>
             <div class="answer answer5">
                 <h2 class="word" id="word5"></h2>
-                <h6 hidden class="golden" id="golden5"></h6>
                 <h6 hidden class="obscure" id="obscure5"></h6>
+                <h6 hidden class="golden" id="golden5"></h6>
             </div>
             <div>
                 <h3 class="definition" id="definition5"></h3>
             </div>
             <div class="answer answer6">
                 <h2 class="word" id="word6"></h2>
-                <h6 hidden class="golden" id="golden6"></h6>
                 <h6 hidden class="obscure" id="obscure6"></h6>
+                <h6 hidden class="golden" id="golden6"></h6>
             </div>
             <div>
                 <h3 class="definition" id="definition6"></h3>
             </div>
             <div class="answer answer7">
                 <h2 class="word" id="word7"></h2>
-                <h6 hidden class="golden" id="golden7"></h6>
                 <h6 hidden class="obscure" id="obscure7"></h6>
+                <h6 hidden class="golden" id="golden7"></h6>
             </div>
             <div>
                 <h3 class="definition" id="definition7"></h3>
             </div>
             <div class="answer answer8">
                 <h2 class="word" id="word8"></h2>
-                <h6 hidden class="golden" id="golden8"></h6>
                 <h6 hidden class="obscure" id="obscure8"></h6>
+                <h6 hidden class="golden" id="golden8"></h6>
             </div>
             <div>
                 <h3 class="definition" id="definition8"></h3>
             </div>
         </div>
         <h4 id="message">Score: 0</h4>
-        <hr style="width: 315px;">
+        <hr style="width: 310px;">
+        <div>
+            <button class="inputselector" onclick="selectlocation()" id="front">Add to Front</button>
+            <button class="inputselector" onclick="selectlocation()" id="end">Add to End</button>
+        </div>
         <div id="keyboard-cont">
             <div class="first-row">
                 <button class="keyboard-button">q</button>
@@ -122,18 +132,10 @@
                 <button class="keyboard-button" onclick="deleteLetter()">←</button>
             </div>
         </div>
-        <div class="buttonbox">
-            <button id="play" onclick="gameSet()">Play</button>
-            <button onclick="submit()">Submit</button>
-        </div>
     </div>
-    <h2>Levels:</h2>
-    <div id="levels">
-    </div>
-    <br>
     <hr style="width: 325px;">
     <div class="rules">
-        <h2>How to play:</h2>
+        <h2>rules:</h2>
         <p>
             Each game contains a three-letter string
             that you must construct words with. The game consists of eight stages,
@@ -147,6 +149,7 @@
             <input  style="border: none;" class="inputs-htp2" type="text" readonly value="end">
             <input  style="border: none;" class="inputs-htp3" id="htp2" type="text" readonly value="ar">
         </div>
+        <br>
         <p>
             Most stages will have multiple possible answers, so don't be afraid
             to guess! Each stage completed is worth ONE point.
@@ -188,6 +191,12 @@
         <p>
         Try to complete all eight stages and score as high as possible!
         </p>
+    </div>
+    <div class="levels">
+        <h2>Levels:</h2>
+        <div id="levels">
+        </div>
+        <br>
     </div>
 </body>
 </html>

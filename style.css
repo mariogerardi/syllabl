@@ -1,7 +1,7 @@
 body {
     width: 100%;
     color: #001900;
-    background-color: whitesmoke;
+    background-color: #E0C6AD;
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
     padding: 0;
@@ -15,6 +15,7 @@ h1 {
 
 h2 {
     margin: 16px;
+    font-style: italic;
 }
 
 .card {
@@ -24,10 +25,6 @@ h2 {
     width: 350px
 }
 
-#greencard {
-    background-color: #50C878;
-}
-
 #title {
     margin: 0;
     margin-top: 2vh;
@@ -35,7 +32,7 @@ h2 {
 }
 
 #symbol {
-    font-weight: 900;
+    font-weight: 100;
     position: relative;
     bottom: 30px;
     left: 3px;
@@ -49,39 +46,52 @@ h2 {
 }
 
 hr {
-    border-color: #022419;
+    border-color: #C1B2A2;
 }
 
 p {
     text-align: justify;
 }
 
-input {
-    padding: 0;
-    margin: 0;
-    border-radius: 2px;
+.answerbox {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.answerboxes {
+    padding: 0px 2px;
+    margin: auto;
     text-align: center;
     font-size: x-large;
-    height: 6vh;
-    width: 6.5vh;
+    line-height: 4.5vh;
+    height: 4.5vh;
     background-color: whitesmoke;
 }
 
 button {
     color: whitesmoke;
-    background-color: #18673a;
-    margin-bottom: 2vh;
+    background-color: #704F38;
+    margin-bottom: 1vh;
     border-radius: 50px;
     border-style: none;
     font-size: medium;
     font-weight: 900;
-    height: 5vh;
+    height: 30px;
     width: 100px;
 }
 
 button:active {
     color: #2E8B57;
     background-color: whitesmoke;
+}
+
+.inputselector {
+    margin: 5px 5px 0px 5px;
+    font-size: medium;
+    border-radius: 5px;
+    height: 35px;
+    width: 150px;
 }
 
 .game {
@@ -92,28 +102,37 @@ button:active {
 
 .buttonbox {
     margin: auto;
+    margin-top: 15px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 225px;
+    width: 315px;
 }
 
 #slotOne {
-    border-top-left-radius: 50px;
-    border-bottom-left-radius: 50px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
     caret-color: transparent;
-    padding-right: 5px;
     text-align: right;
-    width: 115px;
+    width: 140px;
+    padding-left: 10px;
+}
+
+#slotTwo {
+    padding: 0px 5px;
 }
 
 #slotThree {
-    border-top-right-radius: 50px;
+    border-top-right-radius: 5px;
     caret-color: transparent;
-    border-bottom-right-radius: 50px;
-    padding-left: 5px;
+    border-bottom-right-radius: 5px;
     text-align: left;
-    width: 115px
+    width: 140px;
+    padding-right: 10px;
+}
+
+.levels {
+    background-color: #8ddda8;
 }
 
 .answer {
@@ -128,8 +147,8 @@ button:active {
 
 .word {
     font-size: large;
-    padding-right: 2%;
-    margin-bottom: 0;
+    padding-right: 1%;
+    margin: 15px 5px 5px 15px;
 }
 
 .partofspeech {
@@ -149,9 +168,9 @@ button:active {
 
 .results {
     margin: auto;
-    margin-top: 15px;
-    height: 310px;
-    width: 325px;
+    margin-top: 0;
+    height: 300px;
+    width: 345px;
 }
 
 .obscure, .golden {
@@ -160,6 +179,8 @@ button:active {
     margin-right: 5px;
     border-radius: 5px;
     font-size: 12px;
+    position: relative;
+    bottom: 3px;
 }
 
 .obscure {
@@ -167,7 +188,11 @@ button:active {
 }
 
 .golden {
-    color: #423c6d;
+    background-color: black;
+    background: linear-gradient(to bottom, #cfc09f 22%,#634f2c 24%, #cfc09f 26%, #cfc09f 27%,#ffecb3 40%,#3a2c0f 78%); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #fff;
 }
 
 #definition8 {
@@ -176,7 +201,7 @@ button:active {
 
 .rules {
     margin: auto;
-    width: 350px;
+    width: 330px;
     text-align: left;
 }
 
