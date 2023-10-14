@@ -24,71 +24,47 @@
             <button onclick="clear()">Clear</button>
             <button onclick="submit()">Submit</button>
         </div>
-        <hr style="width: 310px;">
+        <hr style="width: 310px; margin-bottom: 5px;">
         <div class="results">
             <div class="answer answer1">
                 <h2 class="word" id="word1"></h2>
                 <h6 hidden class="obscure" id="obscure1"></h6>
                 <h6 hidden class="golden" id="golden1"></h6>
             </div>
-            <div>
-                <h3 class="definition" id="definition1"></h3>
-            </div>
             <div class="answer answer2">
                 <h2 class="word" id="word2"></h2>
                 <h6 hidden class="obscure" id="obscure2"></h6>
                 <h6 hidden class="golden" id="golden2"></h6>
-            </div>
-            <div>
-                <h3 class="definition" id="definition2"></h3>
             </div>
             <div class="answer answer3">
                 <h2 class="word" id="word3"></h2>
                 <h6 hidden class="obscure" id="obscure3"></h6>
                 <h6 hidden class="golden" id="golden3"></h6>
             </div>
-            <div>
-                <h3 class="definition" id="definition3"></h3>
-            </div>
             <div class="answer answer4">
                 <h2 class="word" id="word4"></h2>
                 <h6 hidden class="obscure" id="obscure4"></h6>
                 <h6 hidden class="golden" id="golden4"></h6>
-            </div>
-            <div>
-                <h3 class="definition" id="definition4"></h3>
             </div>
             <div class="answer answer5">
                 <h2 class="word" id="word5"></h2>
                 <h6 hidden class="obscure" id="obscure5"></h6>
                 <h6 hidden class="golden" id="golden5"></h6>
             </div>
-            <div>
-                <h3 class="definition" id="definition5"></h3>
-            </div>
             <div class="answer answer6">
                 <h2 class="word" id="word6"></h2>
                 <h6 hidden class="obscure" id="obscure6"></h6>
                 <h6 hidden class="golden" id="golden6"></h6>
-            </div>
-            <div>
-                <h3 class="definition" id="definition6"></h3>
             </div>
             <div class="answer answer7">
                 <h2 class="word" id="word7"></h2>
                 <h6 hidden class="obscure" id="obscure7"></h6>
                 <h6 hidden class="golden" id="golden7"></h6>
             </div>
-            <div>
-                <h3 class="definition" id="definition7"></h3>
-            </div>
             <div class="answer answer8">
                 <h2 class="word" id="word8"></h2>
                 <h6 hidden class="obscure" id="obscure8"></h6>
                 <h6 hidden class="golden" id="golden8"></h6>
-            </div>
-            <div>
-                <h3 class="definition" id="definition8"></h3>
             </div>
         </div>
         <h4 id="message">Score: 0</h4>
@@ -135,7 +111,7 @@
     </div>
     <hr style="width: 325px;">
     <div class="rules">
-        <h2>rules:</h2>
+        <h2>how to play:</h2>
         <p>
             Each game contains a three-letter string
             that you must construct words with. The game consists of eight stages,
@@ -144,47 +120,47 @@
             Some allow both.
         </p>
         <h4 id="syllable-htp">syllables required: 3</h4>
-        <div id="htp">
-            <input  style="border: none;" class="inputs-htp" id="htp1" type="text" readonly value="cal">
-            <input  style="border: none;" class="inputs-htp2" type="text" readonly value="end">
-            <input  style="border: none;" class="inputs-htp3" id="htp2" type="text" readonly value="ar">
+        <div class="answerbox">
+            <div class="answerboxes" style="border-style: none;" id="slotOneEx">cal</div>
+            <div class="answerboxes" style="border-style: none; font-weight: 900;" id="slotTwoEx">end</div>
+            <div class="answerboxes" style="border-style: none;" id="slotThreeEx">ar</div>
         </div>
         <br>
         <p>
             Most stages will have multiple possible answers, so don't be afraid
-            to guess! Each stage completed is worth ONE point.
+            to guess! Each stage completed is worth one point.
         </p>
         <p>    
-            You'll receive additional points for each <span style="color: rebeccapurple;">OBSCURE</span> word you find. 
+            You'll receive additional points for each <span style="color: rebeccapurple; font-weight: 900;">OBSCURE</span> word you find. 
             Obscurity is defined as having a Zipf value of 3 or less - which
             corresponds to words with frequencies of one per million words.
-            As such, you will receive THREE additional points for each 
+            As such, you will receive three additional points for each 
             obscure word.
         </p>
         <h4 id="syllable-htp">syllables required: 3</h4>
-        <div id="htp">
-            <input style="background-color: rebeccapurple; color: white; border: none;" class="inputs-htp" id="htp1" type="text" readonly value="p">
-            <input style="background-color: rebeccapurple; color: white; border: none;" class="inputs-htp2" type="text" readonly value="end">
-            <input style="background-color: rebeccapurple; color: white; border: none;" class="inputs-htp3" id="htp2" type="text" readonly value="ulum">
+        <div class="answerbox">
+            <div class="answerboxes" style="border-style: none;" id="slotOneEx">p</div>
+            <div class="answerboxes" style="border-style: none; font-weight: 900;" id="slotTwoEx">end</div>
+            <div class="answerboxes" style="border-style: none;" id="slotThreeEx">ulum</div>
         </div>
         <h6 class="obscure" style="background-color: rebeccapurple;" id="htp">Obscure!</h6>
         <p>
-            Finally, there are <span style="color: gold;">GOLDEN</span> words - ONE per stage. These
-            are specifically selected by the game's creator, and award FIVE additional points.
+            Finally, there are <span style="color: goldenrod; font-weight: 900;">GOLDEN</span> words - ONE per stage. These
+            are specifically selected by the game's creator, and award five additional points.
         </p>
         <h4 id="syllable-htp">syllables required: 3</h4>
-        <div id="htp">
-            <input style="background-color: gold; color: black; border: none;" class="inputs-htp" id="htp1" type="text" readonly value="r">
-            <input style="background-color: gold; color: black; border: none;" class="inputs-htp2" type="text" readonly value="end">
-            <input style="background-color: gold; color: black; border: none;" class="inputs-htp3" id="htp2" type="text" readonly value="ezvous">
+        <div class="answerbox">
+            <div class="answerboxes" style="border-style: none;" id="slotOneEx">r</div>
+            <div class="answerboxes" style="border-style: none; font-weight: 900;" id="slotTwoEx">end</div>
+            <div class="answerboxes" style="border-style: none;" id="slotThreeEx">ezvous</div>
         </div>
-        <h6 class="golden" style="background-color: gold;" id="htp">Golden!</h6>
+        <h6 class="golden" style="background-color: goldenrod;" id="htp">Golden!</h6>
         <p>
-        If a word is both <span style="color: gold;">GOLDEN</span> and <span style="color: rebeccapurple;">OBSCURE</span>,
-        you'll receive EIGHT additional points - totaling NINE points altogether!
+        If a word is both <span style="color: goldenrod; font-weight: 900;">GOLDEN</span> and <span style="color: rebeccapurple; font-weight: 900;">OBSCURE</span>,
+        you'll receive eight additional points - totaling nine points altogether!
         </p>
         <p>
-        Most words will be accepted - however, some plural and conjugated forms of words, 
+        Most words are accepted - however, some plural and conjugated forms of words, 
         such as windmill<span style="font-weight: 900; color: red;">s</span> and inform<span style="font-weight: 900; color: red;">ing</span>, will not be accepted.
         Additionally, most common prepositions, determiners, and pronouns (what, into, some, etc.) will also not be accepted.
         </p>
@@ -192,6 +168,7 @@
         Try to complete all eight stages and score as high as possible!
         </p>
     </div>
+    <hr style="width: 325px;">
     <div class="levels">
         <h2>Levels:</h2>
         <div id="levels">

@@ -48,7 +48,7 @@ const puzzles =
         "puzzleLetters": "ast",
         "inputsEnabled": [1, 1, 1, 3, 3, 3, 2, 2],
         "syllablesRequired": [1, 2, 3, 1, 2, 3, 3, 4],
-        "goldenWords": ["coast", "steadfast", "flabbergast", "waste", "castle", "dynasty", "asteroid", "astrology"]
+        "goldenWords": ["coast", "steadfast", "flabbergast", "waste", "castle", "castaway", "asteroid", "astrology"]
     },
     {
         "puzzleLetters": "ave",
@@ -96,7 +96,7 @@ const puzzles =
         "puzzleLetters": "ful",
         "inputsEnabled": [1, 1, 1, 2, 2, 2, 2, 3],
         "syllablesRequired": [2, 3, 4, 1, 2, 3, 4, 3],
-        "goldenWords": ["awful", "delightful", "uneventful", "full", "fulcrum", "fulfillment", "fulmination", "effulgent"]
+        "goldenWords": ["playful", "delightful", "uneventful", "full", "fulcrum", "fulfillment", "fulmination", "effulgent"]
     },
     {
         "puzzleLetters": "hat",
@@ -120,7 +120,7 @@ const puzzles =
         "puzzleLetters": "lla",
         "inputsEnabled": [3, 3, 3, 3, 1, 1, 1, 2],
         "syllablesRequired": [2, 3, 4, 5, 4, 3, 2, 2],
-        "goldenWords": ["village", "syllable", "collateral", "miscellaneous", "mozzarella", "umbrella", "villa", "llama"]
+        "goldenWords": ["collapse", "syllable", "collateral", "miscellaneous", "mozzarella", "umbrella", "villa", "llama"]
     },
     {
         "puzzleLetters": "mit",
@@ -244,8 +244,6 @@ function gameSet() {
     for (let i = 1; i <= 8; i++) {
         document.getElementById("word"+i).innerHTML = "";
         document.getElementById("word"+i).style.color = "#001900"
-        document.getElementById("definition"+i).innerHTML = "";
-        document.getElementById("definition"+i).style.color = "#001900"  
         document.getElementById("obscure"+i).hidden = true           
         document.getElementById("golden"+i).hidden = true    
     }
@@ -267,8 +265,6 @@ function gameSetChosen(chosenLevel) {
     for (let i = 1; i <= 8; i++) {
         document.getElementById("word"+i).innerHTML = "";
         document.getElementById("word"+i).style.color = "#001900"
-        document.getElementById("definition"+i).innerHTML = "";
-        document.getElementById("definition"+i).style.color = "#001900"  
         document.getElementById("obscure"+i).hidden = true           
         document.getElementById("golden"+i).hidden = true    
     }
@@ -337,14 +333,13 @@ function start() {
     inputDisabler();
     if (score >= 1 && score <= 8) {
         document.getElementById("word"+score).innerHTML = fetchedWord.word;
-        // document.getElementById("definition"+score).innerHTML = fetchedWord.results[0].partOfSpeech + ". " + fetchedWord.results[0].definition;
         if (fetchedWord.word === puzzles[puzzleID].goldenWords[score - 1]) {
-            document.getElementById("golden"+score).style.background = "radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%), radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);}"              
+            document.getElementById("golden"+score).style.backgroundColor = "goldenrod"              
             document.getElementById("golden"+score).innerHTML = "✪ Golden!"              
             document.getElementById("golden"+score).hidden = false           
         }
         if (fetchedWord.frequency <= 3) {
-            document.getElementById("obscure"+score).style.backgroundColor = "#7a839e"              
+            document.getElementById("obscure"+score).style.backgroundColor = "rebeccapurple"              
             document.getElementById("obscure"+score).innerHTML = "✪ Obscure!"   
             document.getElementById("obscure"+score).hidden = false  
         }
@@ -369,6 +364,12 @@ function assign() {
     document.getElementById("message").innerHTML = "Create a word, and press Submit."
     document.getElementById("slotTwo").value = event.target.innerHTML;
     gameSetChosen(event.target.innerHTML);
+}
+
+function clear() {
+    document.getElementById("slotOne").innerHTML = "";
+    document.getElementById("slotThree").innerHTML = ""
+    ;
 }
 
 document.addEventListener("keyup", (e) => {

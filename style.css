@@ -13,9 +13,14 @@ h1 {
     margin-bottom: 0;
 }
 
-h2 {
-    margin: 16px;
+h2.word {
+    margin: 0px;
+    margin-right: 10px;
     font-style: italic;
+}
+
+h6.golden, h6.obscure {
+    margin: ;
 }
 
 .card {
@@ -27,8 +32,7 @@ h2 {
 
 #title {
     margin: 0;
-    margin-top: 2vh;
-    padding-top: 4vh;
+    padding-top: 3vh;
 }
 
 #symbol {
@@ -77,6 +81,7 @@ button {
     border-style: none;
     font-size: medium;
     font-weight: 900;
+    text-align: center;
     height: 30px;
     width: 100px;
 }
@@ -87,7 +92,7 @@ button:active {
 }
 
 .inputselector {
-    margin: 5px 5px 0px 5px;
+    margin: 0px 5px 0px 5px;
     font-size: medium;
     border-radius: 5px;
     height: 35px;
@@ -131,13 +136,31 @@ button:active {
     padding-right: 10px;
 }
 
-.levels {
-    background-color: #8ddda8;
+#slotOneEx {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    caret-color: transparent;
+    text-align: right;
+    width: 140px;
+    padding-left: 10px;
+}
+
+#slotTwoEx {
+    padding: 0px 5px;
+}
+
+#slotThreeEx {
+    border-top-right-radius: 5px;
+    caret-color: transparent;
+    border-bottom-right-radius: 5px;
+    text-align: left;
+    width: 140px;
+    padding-right: 10px;
 }
 
 .answer {
     width: 350px;
-    height: 30px;
+    height: 25px;
     display: flex;
     margin: auto;
     flex-direction: row;
@@ -146,57 +169,36 @@ button:active {
 }
 
 .word {
-    font-size: large;
+    font-size: 16px;
     padding-right: 1%;
-    margin: 15px 5px 5px 15px;
-}
-
-.partofspeech {
-    font-size: small;
-    padding-right: 2%;
-}
-
-.definition {
-    width: 350px;
-    margin: auto;
-    margin-top: 0;
-    margin-bottom: 5px;
-    text-align: left;
-    font-style: italic;
-    font-size: small;
+    margin: 15px 2px 5px 6px;
 }
 
 .results {
     margin: auto;
     margin-top: 0;
-    height: 300px;
-    width: 345px;
+    height: 200px;
+    width: 315px;
 }
 
 .obscure, .golden {
-    padding: 4px;
+    padding: 2.5px;
     margin: 0;
-    margin-right: 5px;
-    border-radius: 5px;
-    font-size: 12px;
+    margin-right: 4px;
+    border-radius: 4px;
+    font-size: 10px;
     position: relative;
     bottom: 3px;
 }
 
 .obscure {
+    background-color: rebeccapurple;
     color: white;
 }
 
 .golden {
-    background-color: black;
-    background: linear-gradient(to bottom, #cfc09f 22%,#634f2c 24%, #cfc09f 26%, #cfc09f 27%,#ffecb3 40%,#3a2c0f 78%); 
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: #fff;
-}
-
-#definition8 {
-    padding-bottom: 3vh;
+    background-color: goldenrod;
+    color: black;
 }
 
 .rules {
@@ -212,21 +214,8 @@ button:active {
     text-align: center;
 }
 
-.inputs-htp {
-    width: 24%;
-    font-size: x-large;
-    text-align: right;
-    padding-right: 8px;
-}
-
-.inputs-htp2 {
-    width: 14%;
-    font-size: x-large;
-}
-
 .inputs-htp3 {
     width: 24%;
-    font-size: x-large;
     text-align: left;
     padding-left: 8px;
 }
@@ -244,14 +233,13 @@ button:active {
 .levelButton {
     color: white;
     margin: 5px;
-    background-color: #18673a;
     border-radius: 50px;
     width: 60px;
     height: 40px;
 }
 
 #keyboard-cont {
-    margin: 1rem 0;
+    margin: .5rem 0rem .6rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -269,6 +257,7 @@ button:active {
     margin: 0px 2px;
     border-radius: 5px;
     width: 28px;
+    height: 40px;
     cursor: pointer;
     text-transform: lowercase;
 }
