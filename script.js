@@ -172,7 +172,105 @@ const puzzles =
     },
 ];
 
+let puzzle = {};
+let fetchedWord = {};
+let structure = 0
+let syllablesNeeded = 0;
+let score = 0;
+let externalScore = 0;
+
+const source = document.querySelector("#slotTwo");
+
+window.onload = () => gameSet(puzzles);
+
+const random = () => {
+    // for testing purposes - enter puzzleID below
+    return 8;
+    // for game to run as normal, disable the previous line
+    const date = new Date();
+    return (date.getFullYear() * date.getDate() * (date.getMonth() + 1)) % puzzles.length;
+}
+
+function gameSet(array) {
+    puzzle = puzzles[random()]
+    let puzzleString = puzzle.puzzleLetters;
+    document.getElementById('slotOne').innerHTML = "";
+    document.getElementById('slotTwo').innerHTML = puzzleString;
+    document.getElementById('slotThree').innerHTML = "";
+    for (let i = 1; i <= 8; i++) {
+        document.getElementById("word"+i).innerHTML = "";
+        document.getElementById("word"+i).style.color = "#001900"
+        document.getElementById("obscure"+i).hidden = true           
+        document.getElementById("golden"+i).hidden = true    
+    }
+    score = 0;
+    externalScore = 0
+    document.getElementById("message").innerHTML = "Score: 0";
+    start();
+}
+
 // submit() takes the three inputs and gets the word info from the formed word
+
+function inputDisabler() {
+    structure = puzzles[random()].inputsEnabled[score];
+    syllablesNeeded = puzzles[random()].syllablesRequired[score];
+    if (score === 8) {
+        document.getElementById('syllables').innerHTML = "Congratulations!"
+    } else {
+        document.getElementById('syllables').innerHTML = "syllables required: " + syllablesNeeded
+    }
+    selectlocation(structure);
+    if (structure === 1) {
+        document.getElementById('slotOne').style.backgroundColor = "whitesmoke";
+        document.getElementById('slotThree').style.backgroundColor = "black";
+        document.getElementById('slotThree').style.width = "0px";
+        document.getElementById('slotOne').style.width = "175px";
+        document.getElementById('slotTwo').style.paddingLeft = "0px";
+        document.getElementById('slotTwo').style.paddingRight = "5px";
+        input = "slotOne"
+    }
+    if (structure === 2) {
+        document.getElementById('slotOne').style.backgroundColor = "black";
+        document.getElementById('slotOne').style.width = "0px";
+        document.getElementById('slotThree').style.width = "175px";
+        document.getElementById('slotThree').style.backgroundColor = "whitesmoke";
+        document.getElementById('slotTwo').style.paddingRight = "0px";
+        document.getElementById('slotTwo').style.paddingLeft = "5px";
+        input = "slotThree"
+    }
+    if (structure === 3) {
+        document.getElementById('slotOne').style.backgroundColor = "whitesmoke";
+        document.getElementById('slotOne').style.width = "90px";
+        document.getElementById('slotThree').style.backgroundColor = "whitesmoke";
+        document.getElementById('slotThree').style.width = "90px";
+        document.getElementById('slotTwo').style.paddingLeft = "0px";
+        document.getElementById('slotTwo').style.paddingRight = "0px";
+        input = "slotOne"
+    }
+}
+
+function start() {
+    document.getElementById("message").innerHTML = "Score: " + externalScore;
+    document.getElementById('slotOne').innerHTML = "";
+    document.getElementById('slotThree').innerHTML = "";
+    if (score >= 1 && score <= 8) {
+        document.getElementById("word"+score).innerHTML = fetchedWord.word;
+        if (fetchedWord.word === puzzles[random()].goldenWords[score - 1]) {
+            document.getElementById("golden"+score).style.backgroundColor = "goldenrod"              
+            document.getElementById("golden"+score).innerHTML = "✪ Golden!"              
+            document.getElementById("golden"+score).hidden = false           
+        }
+        if (fetchedWord.frequency <= 3) {
+            document.getElementById("obscure"+score).style.backgroundColor = "rebeccapurple"              
+            document.getElementById("obscure"+score).innerHTML = "✪ Obscure!"   
+            document.getElementById("obscure"+score).hidden = false  
+        }
+    }
+    if (score === 8 || score > 8) {
+        document.getElementById('syllables').innerHTML = "Congratulations!"
+    }
+    inputDisabler();
+}
 
 function submit() {
     let first = document.getElementById('slotOne').innerHTML;
@@ -221,7 +319,7 @@ function submit() {
                     document.getElementById("message").style.color = "#7a839e";
                     externalScore += 3;
                 }
-                if (data.word === puzzles[puzzleID].goldenWords[score - 1]) {
+                if (data.word === puzzles[random()].goldenWords[score - 1]) {
                     document.getElementById("title").style.color = "gold"
                     document.getElementById("message").innerHTML = "+5 points!";
                     document.getElementById("message").style.color = "gold";
@@ -236,140 +334,15 @@ function submit() {
     });
 }
 
-function gameSet() {
-    puzzleID = Math.floor(Math.random() * puzzles.length)
-    document.getElementById('slotOne').innerHTML = "";
-    document.getElementById("slotTwo").innerHTML = puzzles[puzzleID].puzzleLetters
-    document.getElementById('slotThree').innerHTML = "";
-    for (let i = 1; i <= 8; i++) {
-        document.getElementById("word"+i).innerHTML = "";
-        document.getElementById("word"+i).style.color = "#001900"
-        document.getElementById("obscure"+i).hidden = true           
-        document.getElementById("golden"+i).hidden = true    
-    }
-    score = 0;
-    externalScore = 0
-    document.getElementById("message").innerHTML = "Score: 0";
-    start();
-}
-
-function gameSetChosen(chosenLevel) {
-    for (let i = 0; i < puzzles.length; i++) {
-        if (puzzles[i].puzzleLetters === chosenLevel) {
-            puzzleID = i;
-        }
-    }
-    document.getElementById('slotOne').innerHTML = "";
-    document.getElementById("slotTwo").innerHTML = puzzles[puzzleID].puzzleLetters
-    document.getElementById('slotThree').innerHTML = "";
-    for (let i = 1; i <= 8; i++) {
-        document.getElementById("word"+i).innerHTML = "";
-        document.getElementById("word"+i).style.color = "#001900"
-        document.getElementById("obscure"+i).hidden = true           
-        document.getElementById("golden"+i).hidden = true    
-    }
-    score = 0;
-    externalScore = 0
-    document.getElementById("message").innerHTML = "Score: 0";
-    start();
-}
-
-let puzzleID = 0;
-let fetchedWord = {};
-let structure = 0
-let syllablesNeeded = 0;
-let score = 0;
-let externalScore = 0;
-
-function inputDisabler() {
-    structure = puzzles[puzzleID].inputsEnabled[score];
-    syllablesNeeded = puzzles[puzzleID].syllablesRequired[score];
-    document.getElementById('syllables').innerHTML = "syllables required: " + syllablesNeeded
-    if (structure === 1) {
-        document.getElementById('slotOne').style.backgroundColor = "whitesmoke";
-        document.getElementById('slotThree').style.backgroundColor = "black";
-        document.getElementById('slotThree').style.width = "0px";
-        document.getElementById('slotOne').style.width = "175px";
-        document.getElementById('slotTwo').style.paddingLeft = "0px";
-        document.getElementById('slotTwo').style.paddingRight = "5px";
-        document.getElementById("front").style.borderWidth = "2px";
-        document.getElementById("front").style.borderColor = "white";
-        document.getElementById("front").style.borderStyle = "solid";
-        input = "slotOne"
-        document.getElementById("end").style.borderColor = "black";
-    }
-    if (structure === 2) {
-        document.getElementById('slotOne').style.backgroundColor = "black";
-        document.getElementById('slotOne').style.width = "0px";
-        document.getElementById('slotThree').style.width = "175px";
-        document.getElementById('slotThree').style.backgroundColor = "whitesmoke";
-        document.getElementById('slotTwo').style.paddingRight = "0px";
-        document.getElementById('slotTwo').style.paddingLeft = "5px";
-        document.getElementById("end").style.borderWidth = "2px";
-        document.getElementById("end").style.borderColor = "white";
-        document.getElementById("end").style.borderStyle = "solid";
-        input = "slotThree"
-        document.getElementById("front").style.borderColor = "black";
-    }
-    if (structure === 3) {
-        document.getElementById('slotOne').style.backgroundColor = "whitesmoke";
-        document.getElementById('slotOne').style.width = "90px";
-        document.getElementById('slotThree').style.backgroundColor = "whitesmoke";
-        document.getElementById('slotThree').style.width = "90px";
-        document.getElementById('slotTwo').style.paddingLeft = "0px";
-        document.getElementById('slotTwo').style.paddingRight = "0px";
-        document.getElementById("front").style.borderWidth = "2px";
-        document.getElementById("front").style.borderColor = "white";
-        document.getElementById("front").style.borderStyle = "solid";
-        input = "slotOne"
-        document.getElementById("end").style.borderColor = "black";
-    }
-}
-
-function start() {
-    document.getElementById("message").innerHTML = "Score: " + externalScore;
-    document.getElementById('slotOne').innerHTML = "";
-    document.getElementById('slotThree').innerHTML = "";
-    inputDisabler();
-    if (score >= 1 && score <= 8) {
-        document.getElementById("word"+score).innerHTML = fetchedWord.word;
-        if (fetchedWord.word === puzzles[puzzleID].goldenWords[score - 1]) {
-            document.getElementById("golden"+score).style.backgroundColor = "goldenrod"              
-            document.getElementById("golden"+score).innerHTML = "✪ Golden!"              
-            document.getElementById("golden"+score).hidden = false           
-        }
-        if (fetchedWord.frequency <= 3) {
-            document.getElementById("obscure"+score).style.backgroundColor = "rebeccapurple"              
-            document.getElementById("obscure"+score).innerHTML = "✪ Obscure!"   
-            document.getElementById("obscure"+score).hidden = false  
-        }
-    }
-    if (score === 8) {
-        document.getElementById('syllables').innerHTML = "Congratulations!"
-        alert("Congratulations! You've won!")
-    }
-}
-
-for (let i = 0; i < puzzles.length; i++) {
-        const levelButton = document.createElement("button");
-        levelButton.onclick = assign;
-        levelButton.className = "levelButton"
-        const node = document.createTextNode(puzzles[i].puzzleLetters);
-        levelButton.appendChild(node);
-        const element = document.getElementById("levels");
-        element.appendChild(levelButton);
-}
-
 function assign() {
     document.getElementById("message").innerHTML = "Create a word, and press Submit."
     document.getElementById("slotTwo").value = event.target.innerHTML;
-    gameSetChosen(event.target.innerHTML);
+    gameSet(event.target.innerHTML);
 }
 
 function clear() {
     document.getElementById("slotOne").innerHTML = "";
-    document.getElementById("slotThree").innerHTML = ""
-    ;
+    document.getElementById("slotThree").innerHTML = "";
 }
 
 document.addEventListener("keyup", (e) => {
@@ -427,18 +400,23 @@ document.addEventListener("keypress", function(event) {
     }
 });
 
-function selectlocation() {
-    if (document.activeElement.id === "front") {
-        document.getElementById("front").style.borderWidth = "2px";
-        document.getElementById("front").style.borderColor = "white";
-        document.getElementById("front").style.borderColor = "solid";
+function selectlocation(a) {
+    if (document.activeElement.id === "front" || a === 1 || a === 3) {
+        document.getElementById("front").style.borderWidth = "1px";
+        document.getElementById("end").style.borderStyle = "none";
+        document.getElementById("front").style.borderStyle = "solid";
+        document.getElementById("front").style.backgroundColor = "#384870";
         input = "slotOne"
-        document.getElementById("end").style.borderStyle = "black";
-    } else {
-        document.getElementById("end").style.borderWidth = "2px";
-        document.getElementById("end").style.borderColor = "white";
+        document.getElementById("front").style.borderColor = "whitesmoke";
+        document.getElementById("end").style.backgroundColor = "#5c5c5c";
+    }
+    if (document.activeElement.id === "end" || a === 2) {
+        document.getElementById("end").style.borderWidth = "1px";
+        document.getElementById("end").style.borderColor = "whitesmoke";
         document.getElementById("end").style.borderStyle = "solid";
+        document.getElementById("end").style.backgroundColor = "#384870";
         input = "slotThree"
-        document.getElementById("front").style.borderColor = "black";
+        document.getElementById("front").style.borderStyle = "none";
+        document.getElementById("front").style.backgroundColor = "#5c5c5c";
     }
 }

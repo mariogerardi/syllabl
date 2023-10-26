@@ -20,11 +20,9 @@
             </div>
         </div>
         <div class="buttonbox">
-            <button id="play" onclick="gameSet()">Play</button>
             <button onclick="clear()">Clear</button>
             <button onclick="submit()">Submit</button>
         </div>
-        <hr style="width: 310px; margin-bottom: 5px;">
         <div class="results">
             <div class="answer answer1">
                 <h2 class="word" id="word1"></h2>
@@ -68,7 +66,6 @@
             </div>
         </div>
         <h4 id="message">Score: 0</h4>
-        <hr style="width: 310px;">
         <div>
             <button class="inputselector" onclick="selectlocation()" id="front">Add to Front</button>
             <button class="inputselector" onclick="selectlocation()" id="end">Add to End</button>
@@ -109,7 +106,6 @@
             </div>
         </div>
     </div>
-    <hr style="width: 325px;">
     <div class="rules">
         <h2>how to play:</h2>
         <p>
@@ -131,7 +127,7 @@
             to guess! Each stage completed is worth one point.
         </p>
         <p>    
-            You'll receive additional points for each <span style="color: rebeccapurple; font-weight: 900;">OBSCURE</span> word you find. 
+            You'll receive additional points for each <span style="font-weight: 900;">OBSCURE</span> word you find. 
             Obscurity is defined as having a Zipf value of 3 or less - which
             corresponds to words with frequencies of one per million words.
             As such, you will receive three additional points for each 
@@ -167,13 +163,6 @@
         <p>
         Try to complete all eight stages and score as high as possible!
         </p>
-    </div>
-    <hr style="width: 325px;">
-    <div class="levels">
-        <h2>Levels:</h2>
-        <div id="levels">
-        </div>
-        <br>
     </div>
 </body>
 </html>
